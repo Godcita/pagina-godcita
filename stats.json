@@ -1,0 +1,23 @@
+{
+  "actualizado": "2026-11-08",
+  "redes": {
+    "twitch": {
+      "seguidores": 20587,
+      "metricas": {},
+      "vivo": false,
+      "muestras": []
+    },
+    "kick": {
+      "seguidores": 317,
+      "metricas": {},
+      "vivo": false,
+      "muestras": []
+    }
+  },
+  "historial": [
+    {
+      "mes": "2026-11",
+      "total": 20904
+    }
+  ]
+}
