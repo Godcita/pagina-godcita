@@ -3,16 +3,21 @@
   "redes": {
     "twitch": {
       "seguidores": 20587,
-      "metricas": {
-        "Horas emitidas (30 días)": null
-      },
-      "vivo": false
+      "metricas": {},
+      "vivo": false,
+      "muestras": []
+    },
+    "kick": {
+      "seguidores": 317,
+      "metricas": {},
+      "vivo": false,
+      "muestras": []
     }
   },
   "historial": [
     {
       "mes": "2026-11",
-      "total": 20587
+      "total": 20904
     }
   ]
 }
