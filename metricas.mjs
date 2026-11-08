@@ -171,7 +171,18 @@ for (const [nombre, fn] of Object.entries({
   instagram: () => instagram("IG_TOKEN_PRINCIPAL"),
   gg: () => instagram("IG_TOKEN_GAMING"),
 })) {
-  try { const d = await fn(); if (d) { redes[nombre] = d; console.log(nombre, d); } }
+  try {
+    const d = await fn();
+    if (d) {
+      // mezcla: lo nuevo pisa solo si tiene valor; lo cargado a mano se conserva
+      const prev = redes[nombre] || {};
+      const metricas = { ...(prev.metricas || {}) };
+      for (const [k, v] of Object.entries(d.metricas || {})) if (v != null) metricas[k] = v;
+      redes[nombre] = { ...prev, ...Object.fromEntries(Object.entries(d).filter(([, v]) => v != null)), metricas,
+                        audiencia: { ...(prev.audiencia || {}), ...(d.audiencia || {}) } };
+      console.log(nombre, redes[nombre].seguidores);
+    }
+  }
   catch (e) { console.log(`Error en ${nombre}:`, e.message); }
 }
 
