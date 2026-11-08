@@ -1,0 +1,29 @@
+name: Actualizar metricas
+
+on:
+  schedule:
+    - cron: "0 12 * * 1"   # todos los lunes a las 9 de la mañana (hora Argentina)
+  workflow_dispatch:        # botón para correrlo a mano
+
+permissions:
+  contents: write
+
+jobs:
+  metricas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Buscar los números
+        run: node metricas.mjs
+        env:
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+      - name: Guardar si cambió algo
+        run: |
+          git config user.name "robot-godcita"
+          git config user.email "robot@users.noreply.github.com"
+          git add stats.json
+          git diff --cached --quiet || (git commit -m "Métricas de la semana" && git push)
