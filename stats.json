@@ -1,23 +1,35 @@
 {
-  "actualizado": "2026-11-08",
+  "actualizado": "2026-11-09",
   "redes": {
     "twitch": {
       "seguidores": 20587,
       "metricas": {},
-      "vivo": false,
-      "muestras": []
+      "audiencia": { "edad": "18 a 36", "hombres": 60, "mujeres": 40, "paises": "Argentina, Chile, Perú, Uruguay, México y España" }
     },
     "kick": {
       "seguidores": 317,
-      "metricas": {},
-      "vivo": false,
-      "muestras": []
+      "metricas": { "Espectadores promedio": 40 },
+      "audiencia": { "edad": "18 a 36", "hombres": 60, "mujeres": 40, "paises": "Argentina, Chile, Perú, Uruguay, México y España" }
+    },
+    "instagram": {
+      "seguidores": 11800,
+      "metricas": { "Reproducciones (30 días)": "400K" },
+      "audiencia": { "edad": "18 a 36", "hombres": 60, "mujeres": 40, "paises": "Argentina, Chile, Perú, Uruguay, México y España" }
+    },
+    "gg": {
+      "seguidores": 1200,
+      "metricas": { "Reproducciones (30 días)": "50K" },
+      "audiencia": { "edad": "18 a 36", "hombres": 60, "mujeres": 40, "paises": "Argentina, Chile, Perú, Uruguay, México y España" }
+    },
+    "tiktok": {
+      "audiencia": { "edad": "18 a 36", "hombres": 60, "mujeres": 40, "paises": "Argentina, Chile, Perú, Uruguay, México y España" }
+    },
+    "arqui": {
+      "audiencia": { "edad": "18 a 36", "hombres": 60, "mujeres": 40, "paises": "Argentina, Chile, Perú, Uruguay, México y España" }
+    },
+    "x": {
+      "audiencia": { "edad": "18 a 36", "hombres": 60, "mujeres": 40, "paises": "Argentina, Chile, Perú, Uruguay, México y España" }
     }
   },
-  "historial": [
-    {
-      "mes": "2026-11",
-      "total": 20904
-    }
-  ]
+  "historial": []
 }
