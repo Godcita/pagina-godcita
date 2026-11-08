@@ -1488,7 +1488,8 @@ const CONFIG = {
     if(x.status!==200)return;const S=JSON.parse(x.responseText);
     for(const r of CONFIG.redes){const d=S.redes&&S.redes[r.id];if(!d)continue;
       if(d.seguidores!=null)r.seguidores=d.seguidores;
-      if(d.metricas)r.metricas.forEach(m=>{if(d.metricas[m[0]]!=null)m[1]=d.metricas[m[0]]});
+      if(d.metricas){r.metricas.forEach(m=>{if(d.metricas[m[0]]!=null)m[1]=d.metricas[m[0]]});
+        for(const k in d.metricas)if(d.metricas[k]!=null&&!r.metricas.some(m=>m[0]===k))r.metricas.push([k,d.metricas[k]]);}
       if(d.audiencia)Object.assign(r.audiencia,d.audiencia);}
     if(S.actualizado)CONFIG.actualizado=S.actualizado;
     if(S.historial&&S.historial.length){const N=["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
@@ -1926,7 +1927,7 @@ const CONFIG = {
   </div>
 </section>
 </main>
-<footer><div>Godcita · Bianca Galeano · hecho en Buenos Aires</div><div style="font-size:12px;opacity:.6;margin-top:6px">Versión 8-nov · TikTok y X</div><div class="pie"><a href="#legal">Privacidad y reglas</a><a href="#contacto">Contacto para marcas</a><a href="#cartelera">Dejar mi opinión</a></div></footer>
+<footer><div>Godcita · Bianca Galeano · hecho en Buenos Aires</div><div style="font-size:12px;opacity:.6;margin-top:6px">Versión 9-nov · todas las redes</div><div class="pie"><a href="#legal">Privacidad y reglas</a><a href="#contacto">Contacto para marcas</a><a href="#cartelera">Dejar mi opinión</a></div></footer>
 <div id="velo" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status">Mail copiado</div>
 
@@ -1979,7 +1980,7 @@ function pintarRed(){
   const h=a.hombres??0,m=a.mujeres??0;
   const visibles=r.metricas.filter(m=>m[1]!=null||C.mostrarVacios);
   const top=visibles.slice(0,2), resto=visibles.slice(2);
-  const frase=(a.edad||a.hombres!=null)?`Me ve sobre todo gente de ${esc(a.edad??"—")} años: ${pct(a.hombres)} hombres y ${pct(a.mujeres)} mujeres. ${a.argentina!=null?pct(a.argentina)+" desde Argentina.":""}`:"Acá va a aparecer quién me ve: edad, género y de dónde.";
+  const frase=(a.edad||a.hombres!=null||a.paises)?[a.edad?`Me ve sobre todo gente de ${esc(a.edad)} años.`:"",a.hombres!=null?`${pct(a.hombres)} hombres y ${pct(a.mujeres)} mujeres.`:"",a.paises?`Me ven sobre todo desde ${esc(a.paises)}.`:(a.argentina!=null?pct(a.argentina)+" desde Argentina.":"")].filter(Boolean).join(" "):"Acá va a aparecer quién me ve: edad, género y de dónde.";
   $("#minis").innerHTML=top.map(([l,v])=>`<div class="panel"><div class="v">${num(v)}</div><span class="etq" style="margin:4px 0 0">${esc(l)}</span></div>`).join("")
    +`<div class="panel audiencia"><span class="etq">Quién me ve</span><div class="barra-aud" aria-hidden="true"><i style="width:${h}%;background:var(--lila)"></i><i style="width:${m}%;background:var(--rosa)"></i></div><p style="font-size:15.5px;margin-top:8px">${frase}</p></div>`
    +(resto.length?`<details class="mas-metricas"><summary>Ver más métricas de ${esc(r.nombre)}</summary><ul class="lista-simple">${resto.map(([l,v])=>`<li><span>${esc(l)}</span><b>${num(v)}</b></li>`).join("")}</ul></details>`:"");
