@@ -8,9 +8,13 @@
 <!-- Vista previa al compartir el link (WhatsApp, LinkedIn, mail). Cuando tengas dominio, subí preview.jpg (1200x630) y cambiá la URL. -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Godcita – Bianca Galeano">
-<meta property="og:description" content="Streamer, host y creadora de contenido. Mirá mis números al día y trabajemos juntos.">
-<meta property="og:image" content="https://godcita.com.ar/preview.jpg">
-<meta property="og:url" content="https://godcita.com.ar/">
+<meta property="og:description" content="Streamer, host y creadora de contenido de gaming, pádel y lifestyle. +43 mil personas en mi comunidad. Mirá mis números y trabajemos juntos.">
+<meta property="og:image" content="https://pagina-gocita.vercel.app/og-godcita.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:image" content="https://pagina-gocita.vercel.app/og-godcita.jpg">
+<meta property="og:url" content="https://pagina-gocita.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#9B5CF6">
 <!-- Estadísticas de visitas gratis: pegá acá el script de Cloudflare Web Analytics cuando tengas dominio. -->
@@ -344,11 +348,24 @@ canvas#juego{width:100%;height:auto;display:block;border-radius:16px;background:
 .animos input:focus-visible+span{outline:2px solid var(--rosa);outline-offset:2px}
 .resp .animo{font-size:12.5px;padding:2px 8px;border-radius:999px;background:var(--suave);margin-left:6px}
 /* votos */
-.votos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-.voto{padding:20px}
-.voto .q{font-family:"Bricolage Grotesque";font-weight:800;font-size:20px;letter-spacing:-.02em;margin-bottom:12px}
+.eoa-caja{border:1px solid var(--linea);border-radius:24px;background:var(--superficie);margin-top:34px}
+.eoa-caja summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:22px 24px}
+.eoa-caja summary::-webkit-details-marker{display:none}
+.eoa-caja summary b{display:block;font-family:"Bricolage Grotesque";font-size:26px;letter-spacing:-.02em}
+.eoa-caja summary small{display:block;color:var(--gris);font-size:14.5px;margin-top:4px}
+.eoa-flecha{font-style:normal;font-size:26px;width:44px;height:44px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--rosa-suave);color:var(--rosa);transition:transform .3s}
+.eoa-caja[open] .eoa-flecha{transform:rotate(180deg)}
+.eoa-cuerpo{padding:0 20px 22px}
+.eoa-barra{height:6px;border-radius:999px;background:var(--suave);overflow:hidden;margin-bottom:16px}
+.eoa-barra i{display:block;height:100%;width:0;background:var(--rosa);transition:width .4s}
+.eoa-mas{display:block;margin:16px auto 0}
+.votos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.voto{padding:16px}
+.voto .multi{font-family:Inter,sans-serif;font-size:12px;font-weight:600;color:var(--lila);letter-spacing:0;margin-left:6px}
+.voto .bianca-pend{font-size:12.5px;color:var(--gris);margin-top:8px}
+.voto .q{font-family:"Bricolage Grotesque";font-weight:800;font-size:18px;letter-spacing:-.02em;margin-bottom:10px}
 .opciones{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.opciones button{position:relative;overflow:hidden;border:1px solid var(--linea);background:var(--fondo);border-radius:14px;padding:12px 10px;cursor:pointer;font-weight:600;text-align:left;min-height:64px}
+.opciones button{position:relative;overflow:hidden;border:1px solid var(--linea);background:var(--fondo);border-radius:14px;padding:12px 10px;cursor:pointer;font-weight:600;text-align:left;min-height:40px;padding:9px 11px;font-size:14px;line-height:1.25;color:var(--tinta)}
 .opciones button .fill{position:absolute;inset:0 auto 0 0;background:var(--rosa-suave);transition:width .5s;z-index:0}
 .opciones button > span{position:relative;z-index:1;display:block}
 .opciones button .pct{font-size:13px;font-weight:500;color:var(--gris);margin-top:2px}
@@ -1131,6 +1148,81 @@ body:not([data-pagina="inicio"]) main > section.bloque:not(.oculta):first-of-typ
 .mini-musica .txt small{display:block;color:rgba(255,255,255,.65);font-size:11.5px;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:1180px){.mini-musica .txt{max-width:110px}}
 @media (max-width:420px){.mini-musica .txt{display:none}.mini-musica{padding:4px 8px 4px 4px}}
+.x-caja{max-width:620px;margin:0 auto;background:var(--blanco,#fff);border:1px solid var(--linea);border-radius:24px;padding:12px;min-height:200px}
+.x-respaldo{text-align:center;padding:30px 16px}
+.x-respaldo p{color:var(--gris);margin:0 0 16px}
+.x-respaldo .btn{display:inline-block;padding:12px 22px;border-radius:999px;background:var(--tinta);color:#fff;text-decoration:none;font-weight:600}
+/* sin información repetida */
+#t-exp-logos,#descargar2,#eventos,#eventos + .sub-p,#eventos-lista,#reco-gaming-extra,#marcas-lista,#rubros,#servs,#modos{display:none!important}
+#contacto .paquetes{margin-bottom:34px}
+.x-destacados{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;align-items:start;margin-bottom:36px}
+.nota .nota-link{display:inline-block;margin:6px 0 2px;font-weight:700;font-size:14px;color:inherit}
+.xt{display:flex;flex-direction:column;gap:12px;background:var(--superficie);border:1px solid var(--linea);border-radius:20px;padding:20px;text-decoration:none;color:var(--tinta);transition:border-color .2s,transform .2s}
+.xt:hover{border-color:var(--lila);transform:translateY(-2px)}
+.xt-head{display:flex;align-items:center;gap:10px}
+.xt-av{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.xt-head b{display:block;font-size:15px;line-height:1.2}
+.xt-head span{font-size:14px;color:var(--gris)}
+.xt-ok{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#1D9BF0;color:#fff!important;font-size:10px;vertical-align:1px}
+.xt-logo{margin-left:auto;font-size:22px;font-weight:700;color:var(--tinta)!important}
+.xt p{margin:0;font-size:16px;line-height:1.5}
+.xt-foto{width:100%;max-height:340px;object-fit:cover;border-radius:14px}
+.xt-cita{border:1px solid var(--linea);border-radius:14px;padding:12px 14px;font-size:14px}
+.xt-cita span{color:var(--gris)}
+.xt-cita p{font-size:15px;margin-top:4px}
+.xt-pie{display:flex;justify-content:space-between;gap:10px;margin-top:auto;font-size:13px;color:var(--gris);border-top:1px solid var(--linea);padding-top:10px}
+.miro{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px;margin-top:8px}
+.miro-card{background:var(--superficie);border:1px solid var(--linea);border-radius:20px;padding:12px 12px 16px}
+.miro-tapa{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:3/4;background:var(--suave)}
+.miro-tapa img{width:100%;height:100%;object-fit:cover;display:block}
+.miro-tipo{position:absolute;top:10px;left:10px;background:rgba(20,13,32,.78);color:#fff;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px}
+.miro-card h4{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:19px;margin:12px 4px 2px}
+.miro-card > .estrellas{margin:0 4px;font-size:20px}
+.estrellas{color:#F5B82E;letter-spacing:1px;white-space:nowrap}
+.estrellas .apagadas{color:var(--linea)}
+.miro-det{list-style:none;margin:10px 4px 0;padding:10px 0 0;border-top:1px solid var(--linea);display:grid;gap:4px}
+.miro-det li{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13.5px;color:var(--gris)}
+.miro-det .estrellas{white-space:nowrap}
+.miro-det .estrellas{font-size:13px}
+@media (max-width:640px){.miro{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.miro-card h4{font-size:16px}}
+.reco-logo{height:34px;width:auto;max-width:140px;object-fit:contain;margin-bottom:10px;background:#fff;border-radius:8px;padding:4px 8px}
+.reco-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;margin-bottom:12px}
+.sub-tabs{display:flex;gap:6px;margin:4px 0 22px;padding:4px;background:var(--suave);border-radius:999px;width:max-content;max-width:100%}
+.sub-tabs button{font:inherit;font-weight:600;font-size:15px;border:0;background:transparent;color:var(--gris);padding:8px 18px;border-radius:999px;cursor:pointer}
+.sub-tabs button[aria-pressed="true"]{background:var(--superficie);color:var(--tinta);box-shadow:0 2px 8px rgba(34,22,58,.12)}
+.video-item{display:flex;flex-direction:column;min-width:0}
+.v-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.v-links a{font-size:13px;font-weight:600;text-decoration:none;padding:5px 10px;border-radius:999px;background:var(--suave);color:var(--tinta);border:1px solid var(--linea)}
+.v-links a:hover{border-color:var(--lila)}
+.shop-card{background:var(--superficie);border:1px solid var(--linea);border-radius:20px;padding:12px 12px 16px;display:flex;flex-direction:column;gap:10px}
+.shop-img{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--suave)}
+.shop-img > img{width:100%;height:100%;object-fit:cover}
+.shop-logo{position:absolute;left:10px;bottom:10px;width:46px;height:46px;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.shop-logo{width:auto!important;min-width:46px;padding:4px 8px}
+.shop-logo img{width:auto;max-width:90px;height:100%;object-fit:contain}
+.shop-card h3{font-size:17px;margin:2px 4px 0}
+.shop-tiendas{display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.shop-tiendas a{display:block;text-align:center;font-weight:600;font-size:14px;padding:10px 14px;border-radius:999px;background:var(--tinta);color:var(--fondo);text-decoration:none}
+.shop-tiendas a:hover{opacity:.88}
+.sub-tabs[hidden]{display:none!important}
+.tw-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 18px;border-radius:20px;background:#9146FF;color:#fff;margin:0 0 30px}
+.tw-bar.on{background:var(--superficie);color:var(--tinta);border:1.5px solid #9146FF}
+.tw-ico{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.18);display:grid;place-items:center;flex:none}
+.tw-bar.on .tw-ico{background:#9146FF;color:#fff}
+.tw-txt{flex:1;min-width:220px;display:flex;flex-direction:column;gap:2px}
+.tw-txt b{font-size:17px}
+.tw-txt span{font-size:14.5px;opacity:.9}
+.tw-btn{background:#fff!important;color:#5B21B6!important;border:0!important;font-weight:700;white-space:nowrap}
+.tw-bar.on .tw-btn{background:var(--suave)!important;color:var(--tinta)!important}
+.canje[hidden]{display:none!important}
+.proximo{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--lila-suave);color:var(--lila);margin-right:6px;vertical-align:2px}
+
+@media(max-width:560px){.videos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.videos h3{font-size:14px;line-height:1.25}.v-links{gap:4px}.v-links a{font-size:11.5px;padding:4px 8px}.shop-card{padding:8px 8px 12px}.shop-card h3{font-size:14.5px}.miro-det li{font-size:12.5px}.miro-det .estrellas{font-size:11.5px;letter-spacing:-.5px}}
+.v-stats{display:flex;flex-wrap:wrap;gap:4px 12px;margin:6px 4px 0;font-size:13px;font-weight:600;color:var(--tinta)}
+.v-stats>span{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.v-stats i{font-style:normal;color:var(--rosa);font-size:12px}
+.v-stats .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.v-stats-prox{color:var(--gris);font-weight:500;font-size:12.5px}
 </style>
 </head>
 <body>
@@ -1156,7 +1248,7 @@ const CONFIG = {
   equipo: "Procyon Team",
   signo: { sol:"Leo", luna:"Escorpio", ascendente:"Cáncer",
            texto:"Nacida un 18 de agosto. Leo con luna en Escorpio y ascendente en Cáncer: mucha energía para el escenario, intensidad para lo que me importa y un corazón enorme para los míos." },
-  aQueMeDedico: "Soy streamer de Valorant, CS e IRL en Twitch y Kick, y hago co-streams oficiales de torneos y eventos de eSports. También armo reviews de periféricos, muestro mi camino en el pádel (lo estoy aprendiendo desde cero) y comparto mi día a día. Lo que más me importa es que el que me mira se sienta parte.",
+  aQueMeDedico: "Soy streamer de Valorant, CS e IRL en Twitch y Kick, y hago co-streams oficiales de torneos y eventos de eSports. También armo reviews de periféricos, muestro mi camino en el pádel como jugadora principiante y comparto mi día a día. Lo que más me importa es que el que me mira se sienta parte.",
   noSoloStreamer: [
     "Soy Maestra Mayor de Obras.",
     "Soy docente.",
@@ -1180,30 +1272,30 @@ const CONFIG = {
   // ===== NÚMEROS (los completa la automatización; null = todavía sin dato) =====
   redes: [
     { id:"twitch", nombre:"Twitch", usuario:"Godcita_", url:"https://twitch.tv/Godcita_",
-      seguidores:null, metricas:[["Espectadores promedio",35],["Pico de espectadores",null],["Horas vistas (30 días)",null],["Horas emitidas (30 días)",null],["Mensajes de chat por stream",null],["Espectadores únicos",null]],
-      audiencia:{edad:"18 a 36", hombres:60, mujeres:40, argentina:null} },
+      seguidores:20587, metricas:[["Espectadores promedio",35],["Pico de espectadores",null],["Horas vistas (30 días)",null],["Horas emitidas (30 días)",null],["Mensajes de chat por stream",null],["Espectadores únicos",null]],
+      audiencia:{edad:"18 a 36", hombres:60, mujeres:40, argentina:null, paises:"Argentina, Chile, Perú, Uruguay, México y España"} },
     { id:"kick", nombre:"Kick", usuario:"Godcita", url:"https://kick.com/Godcita",
-      seguidores:null, metricas:[["Espectadores promedio",null],["Pico de espectadores",null],["Horas vistas (30 días)",null],["Horas emitidas (30 días)",null],["Mensajes de chat por stream",null],["Suscriptores",null]],
-      audiencia:{edad:null, hombres:null, mujeres:null, argentina:null} },
+      seguidores:317, metricas:[["Espectadores promedio",40],["Pico de espectadores",null],["Horas vistas (30 días)",null],["Horas emitidas (30 días)",null],["Mensajes de chat por stream",null],["Suscriptores",null]],
+      audiencia:{edad:"18 a 36", hombres:60, mujeres:40, argentina:null, paises:"Argentina, Chile, Perú, Uruguay, México y España"} },
     { id:"instagram", nombre:"Instagram", usuario:"@biancagaleano_", url:"https://instagram.com/biancagaleano_",
-      seguidores:null, metricas:[["Reproducciones (30 días)",null],["Vistas promedio por video",null],["Tasa de interacción",null],["Cuentas alcanzadas",null],["Interacciones",null],["Visitas al perfil",null]],
-      audiencia:{edad:null, hombres:null, mujeres:null, argentina:null} },
+      seguidores:11800, metricas:[["Reproducciones (30 días)","400K"],["Vistas promedio por video",null],["Tasa de interacción",null],["Cuentas alcanzadas",null],["Interacciones",null],["Visitas al perfil",null]],
+      audiencia:{edad:"18 a 36", hombres:60, mujeres:40, argentina:null, paises:"Argentina, Chile, Perú, Uruguay, México y España"} },
     { id:"gg", nombre:"Instagram gaming", usuario:"@godcita.gg", url:"https://instagram.com/godcita.gg",
-      seguidores:null, metricas:[["Reproducciones (30 días)",null],["Vistas promedio por video",null],["Tasa de interacción",null],["Cuentas alcanzadas",null],["Interacciones",null],["Visitas al perfil",null]],
-      audiencia:{edad:null, hombres:null, mujeres:null, argentina:null} },
+      seguidores:1200, metricas:[["Reproducciones (30 días)","50K"],["Vistas promedio por video",null],["Tasa de interacción",null],["Cuentas alcanzadas",null],["Interacciones",null],["Visitas al perfil",null]],
+      audiencia:{edad:"18 a 36", hombres:60, mujeres:40, argentina:null, paises:"Argentina, Chile, Perú, Uruguay, México y España"} },
     { id:"tiktok", nombre:"TikTok", usuario:"@biancagaleano_", url:"https://www.tiktok.com/@biancagaleano_",
       seguidores:6203, metricas:[["Reproducciones (30 días)",null],["Vistas promedio por video",null],["Tasa de interacción",null],["Me gusta totales","109,5K"],["Mejor video","21,7K reproducciones"],["Llegada por Para ti",null]],
-      audiencia:{edad:null, hombres:null, mujeres:null, argentina:null} },
+      audiencia:{edad:"18 a 36", hombres:60, mujeres:40, argentina:null, paises:"Argentina, Chile, Perú, Uruguay, México y España"} },
     { id:"x", nombre:"X", usuario:"@biancagaleano_", url:"https://x.com/biancagaleano_",
       seguidores:1900, metricas:[["Impresiones","2,8M"],["Tasa de interacción","2,8%"],["Interacciones","80,9K"],["Me gusta","26,3K"],["Reposts",241],["Visitas al perfil","49,4K"]],
-      audiencia:{edad:null, hombres:null, mujeres:null, argentina:null} },
+      audiencia:{edad:"18 a 36", hombres:60, mujeres:40, argentina:null, paises:"Argentina, Chile, Perú, Uruguay, México y España"} },
     { id:"arqui", nombre:"TikTok arqui", usuario:"@futuraarqui", url:"https://www.tiktok.com/@futuraarqui",
       seguidores:1801, metricas:[["Reproducciones (30 días)",null],["Vistas promedio por video",null],["Tasa de interacción",null],["Me gusta totales","24,2K"],["Mejor video","5.139 reproducciones"],["Llegada por Para ti",null]],
-      audiencia:{edad:null, hombres:null, mujeres:null, argentina:null} }
+      audiencia:{edad:"18 a 36", hombres:60, mujeres:40, argentina:null, paises:"Argentina, Chile, Perú, Uruguay, México y España"} }
   ],
   actualizado: "",   // fecha de la última actualización, formato "2026-11-02" (la completa la automatización)
   // Novedades que pasan en la cinta de arriba
-  novedades: ["Nueva trivia: ganá gemas y kirbitos","La cartelera de esta semana ya está","Votá en ¿Esto o aquello?","Estoy ahorrando para volver al stream","Pregunta del día nueva todos los días"],
+  novedades: ["Nueva trivia: ganá gemas y kirbitos","La cartelera de esta semana ya está","Estoy ahorrando para volver al stream","Pregunta del día nueva todos los días"],
 
   // ===== EXPERIENCIA Y MARCAS =====
   experiencia: [
@@ -1228,18 +1320,34 @@ const CONFIG = {
   ],
 
   // ===== VIDEOS (cat: reviews, padel, futbol, lifestyle, clips) =====
+  // ===== PÁDEL: testeos de palas y clubs (Contenido → Pádel) =====
+  testeos: [
+    { titulo:"Testeo: Steel Custom Air Impact", marca:"Steel Custom", logoMarca:"logo-stl.png", red:"Instagram", url:"https://www.instagram.com/p/DfAf4U5AwgA/", img:"reco-steel.jpg" }
+  ],
+  clubs: [],   // { nombre:"", zona:"", img:"", url:"", nota:"" }
+  // ===== SHOP: productos de mis colabs y reviews (aparecen en Contenido → Colabs y reviews → Shop) =====
+  shop: [
+    { nombre:"Teclado Royal Kludge × Shinden", marca:"Royal Kludge", logo:LOGOS.rk, img:"v-royal.jpg", tiendas:[{t:"RK Gaming",u:"https://rkgaming.shop/search?q=shinden"},{t:"Armytech",u:"https://www.armytech.com.ar/module/iqitsearch/searchiqit?s=Shinden"}] },
+    { nombre:"Teclado AULA Hero 84HE", marca:"AULA", logo:LOGOS.aula, img:"8bb74b742e.jpg", tiendas:[{t:"AULA Gaming",u:"https://aulagaming.com.ar/"}] },
+    { nombre:"Auriculares AULA G7", marca:"AULA", logo:LOGOS.aula, img:"b4fef9633b.jpg", tiendas:[{t:"AULA Gaming",u:"https://aulagaming.com.ar/"}] },
+    { nombre:"Mouse AULA CS620", marca:"AULA", logo:LOGOS.aula, img:"d0af99a99f.jpg", tiendas:[{t:"AULA Gaming",u:"https://aulagaming.com.ar/"}] }
+  ],
+  // Números de cada video (opcional): stats:{vistas:12300, likes:850, compartidos:40, comentarios:25}
   videos: [
+    { cat:"reviews", titulo:"Royal Kludge × Shinden", links:[{t:"RK Gaming",u:"https://rkgaming.shop/search?q=shinden"},{t:"Armytech",u:"https://www.armytech.com.ar/module/iqitsearch/searchiqit?s=Shinden"}], marca:"Royal Kludge", logoMarca:LOGOS.rk, red:"Instagram", url:"https://www.instagram.com/p/Df3ET84hcAX/", img:"v-royal.jpg" },
     { cat:"gaming", titulo:"Stremeando en Arena Pro", marca:"Arena Pro", logoMarca:LOGOS.arena, red:"Stream", url:"", img:"f0a9e01afd.jpg", video:VIDEOS_LOCALES.arena },
-    { cat:"reviews",   titulo:"Teclado AULA Hero 84HE", marca:"AULA", logoMarca:LOGOS.aula, red:"Instagram", url:"https://www.instagram.com/reel/DenLkzQxoKH/", img:"8bb74b742e.jpg" },
-    { cat:"reviews",   titulo:"Auriculares AULA G7", marca:"AULA", logoMarca:LOGOS.aula, red:"Instagram", url:"https://www.instagram.com/reel/DfaqMK6Rrna/", img:"b4fef9633b.jpg" },
-    { cat:"reviews",   titulo:"Mouse AULA CS620", marca:"AULA", logoMarca:LOGOS.aula, red:"Instagram", url:"https://www.instagram.com/reel/DfInxSAx6Tu/", img:"d0af99a99f.jpg" },
-    { cat:"reviews",   titulo:"Teclado AULA Hero 84HE", marca:"AULA", logoMarca:LOGOS.aula, red:"Instagram", url:"https://www.instagram.com/reel/De5Dtf6hZts/", img:"fa406ba2f2.jpg" },
-    { cat:"padel",     titulo:"Día 1 preparándome para mi primer torneo", red:"TikTok", url:"#", img:"" },
-    { cat:"padel",     titulo:"Día 2 preparándome para mi primer torneo", red:"TikTok", url:"#", img:"" },
-    { cat:"futbol",    titulo:"Video de fútbol", red:"Instagram", url:"#", img:"" },
-    { cat:"lifestyle", titulo:"Un sábado conmigo", red:"TikTok", url:"#", img:"" },
-    { cat:"clips",     titulo:"Clip del stream", red:"Twitch", url:"#", img:"" },
-    { cat:"clips",     titulo:"Otro clip", red:"Kick", url:"#", img:"" }
+    { cat:"reviews",   titulo:"Teclado AULA Hero 84HE", links:[{t:"AULA Gaming",u:"https://aulagaming.com.ar/"}], marca:"AULA", logoMarca:LOGOS.aula, red:"Instagram", url:"https://www.instagram.com/reel/DenLkzQxoKH/", img:"8bb74b742e.jpg" },
+    { cat:"reviews",   titulo:"Auriculares AULA G7", links:[{t:"AULA Gaming",u:"https://aulagaming.com.ar/"}], marca:"AULA", logoMarca:LOGOS.aula, red:"Instagram", url:"https://www.instagram.com/reel/DfaqMK6Rrna/", img:"b4fef9633b.jpg" },
+    { cat:"reviews",   titulo:"Mouse AULA CS620", links:[{t:"AULA Gaming",u:"https://aulagaming.com.ar/"}], marca:"AULA", logoMarca:LOGOS.aula, red:"Instagram", url:"https://www.instagram.com/reel/DfInxSAx6Tu/", img:"d0af99a99f.jpg" },
+    { cat:"reviews",   titulo:"Teclado AULA Hero 84HE (parte 2)", links:[{t:"AULA Gaming",u:"https://aulagaming.com.ar/"}], marca:"AULA", logoMarca:LOGOS.aula, red:"Instagram", url:"https://www.instagram.com/reel/De5Dtf6hZts/", img:"fa406ba2f2.jpg" },
+    { cat:"padel", titulo:"Soy buena tirando…", red:"Instagram", url:"https://www.instagram.com/p/DeFvcHIRpGy/", img:"v-padel1.jpg" },
+    { cat:"padel", titulo:"Un día en la cancha", red:"Instagram", url:"https://www.instagram.com/p/DdZg-J6gDwL/", img:"v-padel2.jpg" },
+    { cat:"padel", titulo:"Día 1 jugando contra el HDMP D", red:"Instagram", url:"https://www.instagram.com/p/DfF_dR9BuFp/", img:"v-padel3.jpg" },
+    { cat:"padel", titulo:"Mis 5 excusas en la cancha", red:"Instagram", url:"https://www.instagram.com/p/Dd452xLxPYe/", img:"v-padel4.jpg" },
+    { cat:"futbol", titulo:"Cómo creo que la paro…", red:"Instagram", url:"https://www.instagram.com/p/Dd5Isg9xC6o/", img:"v-futbol.jpg" },
+    { cat:"ometv", titulo:"Estás en OmeTV y te cruzás a tus alumnos", red:"Instagram", url:"https://www.instagram.com/p/DYXr7Vwx8MB/", img:"v-ometv1.jpg" },
+    { cat:"ometv", titulo:"OmeTV · parte 2", red:"Instagram", url:"https://www.instagram.com/p/DaQterKp_U7/", img:"v-ometv2.jpg" },
+    { cat:"ometv", titulo:"OmeTV · parte 3", red:"Instagram", url:"https://www.instagram.com/p/DZ54bVYRCFG/", img:"v-ometv3.jpg" }
   ],
   // ===== GODCITA REVIEW =====
   reviews: [
@@ -1257,12 +1365,9 @@ const CONFIG = {
   ],
   // ===== UN DÍA CON GODCITA =====
   dia: [
-    { h:9,  e:"📐", t:"Facu", d:"Entregas, maquetas y planos en la FADU." },
-    { h:13, e:"💼", t:"Laburo", d:"Mi trabajo administrativo de todos los días." },
-    { h:16, e:"🎾", t:"Pádel con el profe", d:"Entrenando para mi primer torneo." },
-    { h:18, e:"🎬", t:"Edición", d:"Corto clips y armo el contenido de la semana." },
-    { h:21, e:"🎮", t:"Contenido y comunidad", d:"Grabo, edito y charlo con los kirbitos. El stream vuelve cuando tenga mi PC." },
-    { h:1,  e:"🌙", t:"Una partida más", d:"La última. Siempre es la última." }
+    { h:9,  e:"💼", t:"Laburo", d:"De lunes a viernes, de 9 a 17 hs, en mi trabajo administrativo. Los sábados también, de 9 a 12." },
+    { h:18, e:"🎾", t:"Pádel, cuando pinta", d:"Cuando hay cancha y ganas, salgo a jugar." },
+    { h:19, e:"📐", t:"Facu", d:"De 19 a 23 hs cursaba Arquitectura en la FADU. ¡Ya terminé la cursada de este año!" }
   ],
   vlogs: [],   // { titulo:"", url:"", img:"" }
   eventos: [
@@ -1271,12 +1376,9 @@ const CONFIG = {
   ],
 
   // ===== COMUNIDAD =====
-  kirbitosTop: [
-    { nombre:"usuario_1", rol:"El que nunca falta", desde:"desde 2023" },
-    { nombre:"usuario_2", rol:"Mod de confianza",   desde:"desde 2023" },
-    { nombre:"usuario_3", rol:"Rey de los clips",   desde:"desde 2024" }
-  ],
-  masKirbitos: ["usuario_4","usuario_5","usuario_6","usuario_7","usuario_8"],
+  // Cargá acá a tus kirbitos: { nombre:"usuario", rol:"El que nunca falta", desde:"desde 2023" }
+  kirbitosTop: [],
+  masKirbitos: [],
   misSueños: {
     real:   { titulo:"Ser pastelera profesional", texto:"Hacer tortas llenas de colores, de las que da pena cortar. Lo veo lejos, pero se puede." },
     magico: { titulo:"Correr el Dakar", texto:"Tengo vértigo y me da miedo la velocidad, así que nunca va a pasar. Pero si hubiera magia, estaría en el desierto." }
@@ -1298,31 +1400,8 @@ const CONFIG = {
     "¿De qué estás orgulloso aunque nadie te lo haya dicho?",
     "Si mañana no tuvieras que trabajar ni estudiar, ¿qué harías todo el día?"
   ],
-  // ¿Esto o aquello? bianca: 0 = primera opción, 1 = segunda, null = todavía no votó.
-  // ⚠ Las elecciones de Bianca cargadas abajo son DE PRUEBA: reemplazalas por las tuyas.
-  estoOAquello: [
-    { p:"Para arrancar el día", a:"Mate", b:"Café", bianca:0 },
-    { p:"Jugar en", a:"PC", b:"Consola", bianca:0 },
-    { p:"Shooter favorito", a:"Valorant", b:"CS", bianca:0 },
-    { p:"Deporte", a:"Pádel", b:"Fútbol", bianca:0 },
-    { p:"Horario", a:"Noche", b:"Mañana", bianca:0 },
-    { p:"Postre", a:"Torta", b:"Helado", bianca:0 },
-    { p:"Vacaciones", a:"Playa", b:"Montaña", bianca:null },
-    { p:"Plan de sábado", a:"Salir", b:"Quedarse en casa", bianca:null },
-    { p:"Mascota", a:"Perro", b:"Gato", bianca:null },
-    { p:"Música para jugar", a:"Con música", b:"Sin música", bianca:null },
-    { p:"Comida", a:"Pizza", b:"Hamburguesa", bianca:null },
-    { p:"En una partida", a:"Ganar", b:"Divertirse", bianca:null },
-    { p:"Películas", a:"Terror", b:"Comedia", bianca:null },
-    { p:"Mensajes", a:"Audio", b:"Texto", bianca:null },
-    { p:"Estación", a:"Verano", b:"Invierno", bianca:null },
-    { p:"Desayuno", a:"Dulce", b:"Salado", bianca:null }
-  ],
-  comentarios: [
-    { texto:"Un comentario lindo de tu comunidad.", autor:"usuario", red:"Twitch" },
-    { texto:"Otro que te haya hecho reír.", autor:"usuario", red:"TikTok" },
-    { texto:"Y uno más que te guste mostrar.", autor:"usuario", red:"Instagram" }
-  ],
+  // Ejemplo: { texto:"Un comentario lindo", autor:"usuario", red:"Twitch" }
+  comentarios: [],
 
 
   // Mientras armás la página: true muestra los espacios vacíos para completar. Antes de mandarla a marcas, poné false.
@@ -1361,11 +1440,11 @@ const CONFIG = {
   // ===== LA CARTELERA (lo que pinchás cada semana) =====
   // tipo: el título de la nota. color: "amarillo", "rosa", "lila", "turquesa" o "blanco". autor opcional.
   cartelera: [
-    { tipo:"Hit de la semana", texto:"Acá va la canción, el clip o el momento que más sonó esta semana.", color:"amarillo" },
-    { tipo:"Tweet de la semana", texto:"Pegá acá el tweet tuyo (o de la comunidad) que más pegó.", autor:"@biancagaleano_", color:"blanco" },
-    { tipo:"Chismecito", texto:"Algo que pasó, algo que se viene o algo que me pareció interesante.", color:"rosa" },
-    { tipo:"Importante", texto:"Avisos de verdad: fechas, sorteos, colabs, cambios.", color:"lila" },
-    { tipo:"Opinión de un kirbito", texto:"Las opiniones que me dejan y autorizan a publicar aparecen acá.", autor:"Anónimo", color:"turquesa" }
+    { tipo:"Hit de la semana", texto:"Próximamente ✨", color:"amarillo" },
+    { tipo:"Tweet de la semana", texto:"Mi post destacado de la semana.", url:"https://x.com/Biancagaleano_/status/2124507912026407132", autor:"@biancagaleano_", color:"blanco" },
+    { tipo:"Chismecito", texto:"Próximamente ✨", color:"rosa" },
+    { tipo:"Importante", texto:"Próximamente ✨", color:"lila" },
+    { tipo:"Opinión de un kirbito", texto:"Próximamente ✨ Las opiniones que me dejen van a aparecer acá.", color:"turquesa" }
   ],
 
   // ===== TRIVIA: ¿CUÁNTO CONOCÉS A GODCITA? =====
@@ -1396,25 +1475,18 @@ const CONFIG = {
   recomendaciones: [
     { id:"gaming", nombre:"Zona gaming", grupos:[
       { t:"Juegos que recomiendo", items:[ {nombre:"VALORANT", nota:"Si te gustan los tácticos y jugar en equipo."}, {nombre:"Counter-Strike", nota:"El clásico que nunca falla."} ]} ]},
-    { id:"deportes", nombre:"Deportes", grupos:[
-      { t:"Palas de pádel", items:[ {nombre:"Completar", nota:"La pala que uso y para qué nivel me parece."} ]},
-      { t:"Fútbol", items:[ {nombre:"Completar", nota:"Botines, pelota o lo que quieras recomendar."} ]} ]},
-    // Películas, anime y música llevan puntaje (1 a 5) por criterio y tu justificación.
-    { id:"pelis", nombre:"Películas y series", grupos:[ { t:"Lo que vi", items:[
-      { nombre:"Película de ejemplo", anio:"2024", puntaje:4, criterios:{"Música":4,"Visual":5,"Actuación":3,"Historia":4}, opinion:"Acá va por qué le puse esas estrellas: qué me gustó, qué no y a quién se la recomendaría." } ]} ]},
-    { id:"anime", nombre:"Anime", grupos:[ { t:"Lo que vi", items:[
-      { nombre:"Anime de ejemplo", anio:"", puntaje:5, criterios:{"Música":5,"Animación":5,"Personajes":4,"Historia":5}, opinion:"Por qué verlo y para quién." } ]} ]},
-    { id:"musica", nombre:"Música", musica:true, grupos:[ { t:"Canciones y discos que reseñé", items:[
-      { nombre:"Canción de ejemplo · Artista", anio:"", puntaje:4, criterios:{"Letra":4,"Producción":5,"Voz":4,"Vibra":5}, opinion:"Cuándo la escucho y por qué me pega." } ]} ]},
-    { id:"opina", nombre:"¿Qué opina Godcita?", grupos:[ { t:"Mi opinión sobre…", items:[ {nombre:"Un tema", nota:"Lo que pienso, en dos o tres líneas. Puede ser de gaming, de la vida o de cualquier cosa."} ]} ]}
+    { id:"miro", nombre:"Anime y pelis", miro:true, grupos:[] },
+    { id:"musica", nombre:"Música", musica:true, grupos:[] }
+  ],
+  // ===== LO QUE MIRO (estrellas del 1 al 5; detalle es opcional). tipo: "Anime" o "Película" =====
+  miro: [
+    {nombre:"Solo Leveling", tipo:"Anime", img:"miro-sololeveling.jpg", estrellas:5, detalle:{"Cinemática":4,"Opening":4,"Desarrollo":5}},
+    {nombre:"Naruto", tipo:"Anime", img:"miro-naruto.jpg", estrellas:4, detalle:{"Cinemática":2,"Opening":4,"Desarrollo":4}},
+    {nombre:"Dan Da Dan", tipo:"Anime", img:"miro-dandadan.jpg", estrellas:3, detalle:{"Cinemática":5,"Opening":5,"Desarrollo":3}},
+    {nombre:"Frieren", tipo:"Anime", img:"miro-frieren.jpg", estrellas:3, detalle:{"Cinemática":3,"Opening":3,"Desarrollo":3}}
   ],
   // Lo destacado de la semana. por: "Lo más viral", "Elegido por Godcita" o "Elegido por la comunidad".
-  semana: [
-    { tipo:"Video de la semana", titulo:"Completar", por:"Lo más viral", url:"", img:"" },
-    { tipo:"Película de la semana", titulo:"Completar", por:"Elegida por Godcita", url:"", img:"" },
-    { tipo:"Anime de la semana", titulo:"Completar", por:"Elegido por la comunidad", url:"", img:"" },
-    { tipo:"Canción de la semana", titulo:"Completar", por:"Lo que más escuché", url:"", img:"" }
-  ],
+  semana: [],
   // Música en vivo: conectá Spotify a Last.fm (gratis) y poné tu usuario y una API key de Last.fm.
   musica: { lastfmUsuario:"Biancagaleano_", lastfmKey:"111fae417fe1812d480f31ed9539dd33", spotifyPerfil:"" },
 
@@ -1427,7 +1499,7 @@ const CONFIG = {
     { id:"gaming", nombre:"Gaming y tecnología", fotos:[FOTOS.eventoPG,FOTOS.visa,FOTOS.pgCS,FOTOS.setup,FOTOS.escritorio,FOTOS.aula1,FOTOS.aula2,FOTOS.aula3,FOTOS.aula4], intro:"Streams de Valorant y CS, co-streams oficiales, host y análisis de eSports, y reviews de periféricos.",
       hago:["Co-streams oficiales (VALORANT Game Changers, ENC)","Host y análisis de Valorant","Reviews de periféricos","Clips del stream"],
       ideas:["Periférico usado en vivo durante el stream","Review en video con mi experiencia","Patrocinio de un co-stream o torneo","Componentes para armar mi PC en contenido"], videos:"reviews" },
-    { id:"padel", nombre:"Pádel y deportes", fotos:[FOTOS.padel,FOTOS.padelPelota,FOTOS.padelMedallas], intro:"Estoy aprendiendo pádel desde cero y lo muestro día a día con la serie \"Día N preparándome para mi primer torneo\".",
+    { id:"padel", nombre:"Pádel y deportes", fotos:[FOTOS.padel,FOTOS.padelPelota,FOTOS.padelMedallas], intro:"Soy jugadora principiante de pádel y muestro mi progreso en la cancha, camino a mi primer torneo.",
       hago:["Serie diaria camino a mi primer torneo","Clases con mi profe","Progreso real, con errores y avances","Contenido en la cancha"],
       ideas:["Pala, indumentaria o calzado usados en la serie","Equipamiento para mi primer torneo","Contenido en tu club o cancha","Desafío de pádel con la comunidad"], videos:"padel" },
     { id:"futbol", nombre:"Fútbol", intro:"Juego y miro fútbol, y lo comparto en mis redes.",
@@ -1443,11 +1515,10 @@ const CONFIG = {
     titulo: "Mi setup anterior",
     texto: "Así era mi lugar de stream. Hoy no tengo PC: solo me quedan los periféricos que conseguí por canje.",
     foto: FOTOS.setup,
-    tengo: ["Periféricos por canje"]
+    tengo: ["Auriculares","Teclado","Mouse"]
   },
   setups: [   // ejemplos; los reales llegan por el formulario y los aprobás vos
-    { nombre:"Ejemplo", usuario:"@usuario", texto:"Mi setup nuevo, ¿qué opinás?", foto:"", opinion:"Acá va tu opinión sobre su setup." }
-  ],
+      ],
 
   // ===== CÓMO TRABAJAMOS (para marcas) =====
   modalidades: [
@@ -1475,7 +1546,9 @@ const CONFIG = {
   colabs: [],   // { nombre:"Streamer", url:"https://twitch.tv/...", que:"Qué hicimos juntos" }
 
   // ===== CONEXIONES =====
-  backendURL: "",          // URL de tu Google Apps Script. Vacío = modo prueba.
+  backendURL: "",
+  formspree: "https://formspree.io/f/xgakpdbq",   // mensajes de los formularios → godcita.business@gmail.com
+  // backendURL: URL de tu Google Apps Script (planilla). Vacío = se usa Formspree.
   kirbitosPorDia: 60,
   email: "godcita.business@gmail.com"
 };
@@ -1544,7 +1617,7 @@ const CONFIG = {
             </div>
           </article>
           <a class="tile foto c-3 r-4" href="#sobre" id="t-sobre"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Sobre mí</span><span class="t-tit">Entre partidas, pádel y planos</span><span class="t-sub">Mi historia, mis sueños y todo lo que hago además de crear contenido</span></a>
-          <a class="tile c-3 r-3" href="#dia"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Un día con Godcita</span><span class="t-tit">Mi día y mis vlogs</span><span class="t-sub">Facu, laburo, pádel y contenido</span></a>
+          <a class="tile c-3 r-3" href="#dia"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Un día con Godcita</span><span class="t-tit">Mis vlogs</span><span class="t-sub">Facu, laburo, pádel y contenido</span></a>
           <a class="tile sol c-6 r-2" href="#pc"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Mi próxima PC</span><span class="t-tit">Ahorrando para volver al stream</span><span class="t-sub" id="t-pc-sub">Aportá por Mercado Pago o pedí que te avise cuando vuelva</span></a>
         </div>
       </div>
@@ -1567,7 +1640,7 @@ const CONFIG = {
           <a class="tile lila c-3 r-3" href="#numeros"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Números</span><span class="t-big" id="t-num-big">7 redes</span><span class="t-sub" id="t-num-sub">Twitch, Kick, Instagram, TikTok y X, siempre al día</span></a>
           <a class="tile foto c-3 r-5" href="#videos" id="t-videos"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Contenido</span><span class="t-tit">Reviews, pádel, fútbol y lifestyle</span><span class="t-sub">Todo junto o por tema</span></a>
           <a class="tile c-3 r-2" href="#juegos"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Lo que juego</span><span class="t-tit">VALORANT y Counter-Strike</span></a>
-          <a class="tile t-marca c-6 r-2" href="#eventos"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Eventos</span><span class="t-tit">Donde estuve: Punto Gamers, Nuvy y más</span></a>
+          <a class="tile t-marca c-6 r-2" href="#experiencia"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Experiencia</span><span class="t-tit">Eventos, co-streams y marcas con las que trabajé</span></a>
         </div>
       </div>
 
@@ -1577,7 +1650,7 @@ const CONFIG = {
         <div class="rev-cab"><span class="kicker k-reco">Recomienda</span><h2>Lo que miro, escucho y opino</h2></div>
         <div class="rev-grid" id="semana-grid">
           <a class="tile musica c-3 r-3" href="#recomendaciones" data-reco="musica" id="t-musica"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Escuchando ahora</span><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="t-tit" id="t-musica-tit">Mi música en vivo</span><span class="t-sub" id="t-musica-sub">Lo que suena ahora y lo que más escuché esta semana</span></a>
-          <a class="tile t-reco c-3 r-3" href="#recomendaciones"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Recomendaciones de Godcita</span><span class="t-tit">Pelis, anime, música, juegos y pádel, con puntaje</span><div class="estrellas-demo" aria-hidden="true">★★★★☆</div><span class="t-sub">¿Coincidís con mi opinión? Votá</span></a>
+          <a class="tile t-reco c-3 r-3" href="#recomendaciones" data-reco="miro"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Recomendaciones de Godcita</span><span class="t-tit">Juegos, animes, pelis y la música que suena en mis streams</span><div class="estrellas-demo" aria-hidden="true">★★★★☆</div><span class="t-sub">¿Coincidís con mi opinión? Votá</span></a>
         </div>
       </div>
 
@@ -1585,9 +1658,9 @@ const CONFIG = {
         <div class="rev-cab"><span class="kicker k-comu">Comunidad</span><h2>Los kirbitos</h2></div>
         <div class="rev-grid">
           <a class="tile t-comu c-6 r-2" href="#setups"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Setups y envíos</span><span class="t-tit">Mostrame tu setup o mandame algo para que opine</span><span class="t-sub">🔒 Solo se publica si vos querés</span></a>
-          <a class="tile t-comu c-2 r-3" href="#comunidad"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Mi comunidad</span><span class="t-tit">Los kirbitos</span><span class="t-sub">Los de siempre, mis sueños y nuestras charlas</span></a>
+          <a class="tile t-comu c-2 r-3" href="#comunidad"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Mi comunidad</span><span class="t-tit">Los de siempre</span><span class="t-sub">Los de siempre, mis sueños y nuestras charlas</span></a>
           <a class="tile t-comu c-2 r-3" href="#comunidad" data-ancla="conozcamonos"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Pregunta del día</span><span class="t-tit" id="t-pregunta"></span></a>
-          <a class="tile t-comu punteado c-2 r-3" href="#comunidad" data-ancla="eoa"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">¿Esto o aquello?</span><span class="t-tit">¿Qué tan amigos seríamos?</span></a>
+          
           <a class="tile t-quiz c-3 r-3" href="#quiz"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Trivia · ganá kirbitos</span><span class="t-tit">¿Cuánto conocés a Godcita?</span><div class="mini-latas" aria-hidden="true"><i></i><i></i><i></i></div></a>
           <a class="tile t-juego c-3 r-3" href="#jugar"><span class="t-flecha" aria-hidden="true">↗</span><span class="t-etq">Jugar · Juntá kirbitos</span><canvas class="preview-juego" width="520" height="130" aria-hidden="true"></canvas></a>
         </div>
@@ -1628,10 +1701,11 @@ const CONFIG = {
   <div class="wrap">
     <div class="cabeza"><h2>Mi contenido</h2><p>Reviews, pádel, fútbol, lifestyle y clips. Todo junto o por tema.</p></div>
     <div class="filtros" id="filtros" role="group" aria-label="Filtrar videos">
-      <button data-cat="todos" aria-pressed="true">Todo</button><button data-cat="gaming" aria-pressed="false">Gaming</button><button data-cat="reviews" aria-pressed="false">Reviews</button>
+      <button data-cat="todos" aria-pressed="true">Todo</button><button data-cat="gaming" aria-pressed="false">Gaming</button><button data-cat="reviews" aria-pressed="false">Colabs y reviews</button>
       <button data-cat="padel" aria-pressed="false">Pádel</button><button data-cat="futbol" aria-pressed="false">Fútbol</button>
-      <button data-cat="lifestyle" aria-pressed="false">Lifestyle</button><button data-cat="clips" aria-pressed="false">Clips</button>
+      <button data-cat="ometv" aria-pressed="false">OmeTV</button><button data-cat="lifestyle" aria-pressed="false">Lifestyle</button><button data-cat="clips" aria-pressed="false">Clips</button>
     </div>
+    <div class="sub-tabs" id="sub-videos" role="tablist" hidden></div>
     <div class="videos" id="lista-videos"></div>
   </div>
 </section>
@@ -1652,38 +1726,31 @@ const CONFIG = {
 </section>
 <section class="bloque" data-cap="marca" id="experiencia">
   <div class="wrap">
-    <div class="cabeza"><h2>Con quién trabajé</h2><p>Co-streams oficiales, host y análisis, eventos y marcas.</p></div>
+    <div class="cabeza"><h2>Con quién trabajé</h2><p>eSports, eventos y marcas.</p></div>
     <div class="exp" id="exp"></div>
     <h3 class="sub-h" id="eventos">En eventos</h3>
     <p class="sub-p">Lugares donde estuve y gente que conocí.</p>
     <div class="eventos" id="eventos-lista"></div>
     <div class="casos" id="casos" hidden></div>
-    <h3 class="sub-h">Marcas</h3>
-    <div style="height:14px"></div>
-    <div class="marcas" id="marcas-lista"></div>
+    <div class="marcas" id="marcas-lista" hidden></div>
   </div>
 </section>
 <section class="bloque" data-cap="marca" id="porque">
   <div class="wrap">
-    <div class="cabeza"><h2>Por qué yo</h2><p>Lo que suma tenerme en tu campaña, y qué puedo hacer según tu rubro.</p></div>
+    <div class="cabeza"><h2>Por qué yo</h2><p>Lo que suma tenerme en tu campaña y qué hago según tu rubro.</p></div>
     <div class="pqy" id="pqy"></div>
-    <div class="rubros" id="rubros"></div>
+    <div class="rubros" id="rubros" hidden></div>
   </div>
 </section>
 <section class="bloque" data-cap="marca" id="contacto">
   <div class="wrap">
-    <div class="cabeza"><h2>Trabajemos juntos</h2><p>Formatos que ya hice, cómo trabajo y cómo pedirme una propuesta. Por canje, por tarifa o a tu medida.</p></div>
-    <button class="btn sec" id="descargar2" type="button" style="margin:-14px 0 28px">Descargar media kit en PDF</button>
-    <div class="servs" id="servs"></div>
-    <h3 class="sub-h">Cómo trabajamos</h3>
-    <p class="sub-p">Elegí la forma que mejor le sirva a tu marca.</p>
-    <div class="modos" id="modos"></div>
-    <h3 class="sub-h">El proceso</h3>
-    <p class="sub-p">Simple y claro, de la primera charla al informe final.</p>
-    <ol class="proceso" id="proceso"></ol>
-    <h3 class="sub-h">Paquetes</h3>
-    <p class="sub-p">Un punto de partida. Todo se adapta a tu objetivo y presupuesto.</p>
+    <div class="cabeza"><h2>Cómo trabajo</h2><p>Por <b>canje</b> (me mandás el producto y lo uso de verdad), por <b>tarifa</b> o con una <b>propuesta a medida</b>. Estos paquetes son un punto de partida.</p></div>
+    <button class="btn sec" id="descargar2" type="button" hidden>Descargar media kit en PDF</button>
+    <div class="servs" id="servs" hidden></div>
+    <div class="modos" id="modos" hidden></div>
     <div class="paquetes" id="paquetes"></div>
+    <h3 class="sub-h">El proceso</h3>
+    <ol class="proceso" id="proceso"></ol>
     <form class="panel form-marca" id="form-marca" novalidate>
       <h3 style="font-size:28px">Contame sobre tu marca</h3>
       <p class="muted">Te respondo con una propuesta y mis números al día.</p>
@@ -1703,7 +1770,7 @@ const CONFIG = {
     <div class="contacto">
       <div>
         <h2>¿Preferís escribirme directo?</h2>
-        <p>Contame tu idea y te respondo con una propuesta y mis números al día.</p>
+        <p>Mail o cualquiera de mis redes.</p>
         <div class="mail"><code id="mail"></code><button id="copiar">Copiar mail</button></div>
       </div>
       <ul class="links" id="links"></ul>
@@ -1713,7 +1780,7 @@ const CONFIG = {
 <div class="capitulo" id="cap-comu" data-cap="comu"><div class="wrap"><span class="cap-etq">Para la comunidad</span><h2>Los kirbitos</h2><p>Lo que comparto con mi comunidad: charlas, recomendaciones, juegos y mi día a día.</p></div></div>
 <section class="bloque" data-cap="comu" id="comunidad">
   <div class="wrap">
-    <div class="cabeza"><h2>Los kirbitos</h2><p>Mi comunidad. Los que están en cada stream, comentan todo y bancan desde el principio. Acá nos conocemos de verdad.</p></div>
+    <div class="cabeza"><h2>Mi comunidad</h2><p>Mi comunidad. Los que están en cada stream, comentan todo y bancan desde el principio. Acá nos conocemos de verdad.</p></div>
     <div class="godcitos-top" id="top"></div>
     <div class="mas-fans" id="mas-fans"></div>
     <div class="muro-com" id="comentarios"></div>
@@ -1773,13 +1840,6 @@ const CONFIG = {
     </div>
 
     <div class="separa"></div>
-    <h3 class="sub-h" id="eoa">¿Esto o aquello?</h3>
-    <p class="sub-p">Votá y mirá qué eligió Bianca y qué eligió la comunidad. Al final, descubrí qué tan compatibles somos como amigos.</p>
-    <div class="votos" id="votos"></div>
-    <div class="panel compat" id="compat" aria-live="polite">
-      <div class="medidor" id="medidor"><b id="compat-n">?</b></div>
-      <div><h3 id="compat-t">¿Qué tan amigos seríamos?</h3><p class="muted" id="compat-x">Votá al menos 5 preguntas y te digo nuestro porcentaje de amistad.</p></div>
-    </div>
   </div>
 </section>
 <section class="bloque" data-cap="comu" id="cartelera">
@@ -1801,6 +1861,37 @@ const CONFIG = {
       <button class="btn prim" type="submit">Enviar opinión</button>
       <p class="estado" id="op-estado" role="status"></p>
     </form>
+  </div>
+</section>
+<section class="bloque" data-cap="comu" id="tweets">
+  <div class="wrap">
+    <div class="cabeza"><h2>Lo último en X</h2><p>Mis posts destacados y, abajo, los más recientes, que se actualizan solos.</p></div>
+    <h3 class="sub-h">Destacados</h3>
+    <div class="x-destacados">
+      <a class="xt" href="https://x.com/Biancagaleano_/status/2124507912026407132" target="_blank" rel="noopener">
+        <div class="xt-head"><img class="xt-av" src="x-avatar.jpg" alt=""><div><b>Godcita <span class="xt-ok" aria-label="Cuenta verificada">✓</span></b><span>@Biancagaleano_</span></div><span class="xt-logo" aria-hidden="true">𝕏</span></div>
+        <p>Es muy de mami pedir levantarme un domingo temprano, ir a jugar pádel con el amor de mi vida (ponele), volver, hacer un asadito y pasar la tarde tomando mates?</p><p>Después me acuerdo que absolutamente todos los jugadores de padel son gatos y se me pasa.</p>
+        <div class="xt-pie"><span>22 nov 2026</span><span>♡ 15 · 520 vistas</span></div>
+      </a>
+      <a class="xt" href="https://x.com/Biancagaleano_/status/2122136449810039210" target="_blank" rel="noopener">
+        <div class="xt-head"><img class="xt-av" src="x-avatar.jpg" alt=""><div><b>Godcita <span class="xt-ok" aria-label="Cuenta verificada">✓</span></b><span>@Biancagaleano_</span></div><span class="xt-logo" aria-hidden="true">𝕏</span></div>
+        <p>Me encanta que la comunidad me tenga tanta fe como para subir colab con Royal y en realidad piensen que me uní a Shinden posta. Yo los amo 💜👾 YA SE NOS VA A DAR, TRANQUILOS ✨✨</p><p>Les dejo esta hermosura 👀🙌🏻</p><img class="xt-foto" src="x-setup-rk.jpg" alt="Setup con teclado rosa y monitor Royal Kludge" loading="lazy">
+        <div class="xt-pie"><span>15 nov 2026</span><span>841 vistas</span></div>
+      </a>
+      <a class="xt" href="https://x.com/Biancagaleano_/status/2116095331482108141" target="_blank" rel="noopener">
+        <div class="xt-head"><img class="xt-av" src="x-avatar.jpg" alt=""><div><b>Godcita <span class="xt-ok" aria-label="Cuenta verificada">✓</span></b><span>@Biancagaleano_</span></div><span class="xt-logo" aria-hidden="true">𝕏</span></div>
+        <p>Para mi no existen los hombres “tibios” solo no les importas lo suficiente. ( si, lo aprendi a la mala)</p><div class="xt-cita"><b>Arah</b> <span>@ar4cc3l1ss · 29 oct</span><p>Que asco los hombres tibios, a mi escribime “hermosa te extraño no soy nada sin ti”</p></div>
+        <div class="xt-pie"><span>30 oct 2026</span><span>♡ 281 · 51,4 mil vistas</span></div>
+      </a>
+    </div>
+    <h3 class="sub-h">Los más recientes</h3>
+    <div class="x-caja">
+      <a class="twitter-timeline" data-height="640" data-chrome="noheader nofooter noborders transparent" data-dnt="true" href="https://twitter.com/biancagaleano_">Posts de @biancagaleano_</a>
+      <div class="x-respaldo" hidden>
+        <p>No se pudieron cargar los posts acá (a veces X los bloquea si no iniciaste sesión o tenés un bloqueador de anuncios).</p>
+        <a class="btn" href="https://x.com/biancagaleano_" target="_blank" rel="noopener">Ver mis posts en X</a>
+      </div>
+    </div>
   </div>
 </section>
 <section class="bloque" data-cap="comu" id="recomendaciones">
@@ -1845,8 +1936,8 @@ const CONFIG = {
 </section>
 <section class="bloque" data-cap="comu" id="dia">
   <div class="wrap">
-    <div class="cabeza"><h2>Un día con Godcita</h2><p>Mové la barra para ver en qué ando, y mirá los vlogs.</p></div>
-    <div class="panel dia">
+    <div class="cabeza"><h2>Un día con Godcita</h2><p>Mi día a día, en video.</p></div>
+    <div class="panel dia" hidden style="display:none">
       <div>
         <div class="reloj" id="reloj">21<small>:00 hs</small></div>
         <input type="range" id="slider" min="0" max="5" step="1" value="4" aria-label="Hora del día">
@@ -1878,7 +1969,12 @@ const CONFIG = {
 </section>
 <section class="bloque" data-cap="comu" id="jugar">
   <div class="wrap">
-    <div class="cabeza"><h2>Jugá y ganá kirbitos</h2><p>Dos juegos para sumar kirbitos. Cuando vuelva al stream, los cambiás por premios.</p></div>
+    <div class="cabeza"><h2>Jugá y ganá kirbitos</h2><p>Dos juegos para sumar kirbitos. Conectá tu Twitch y se suman solos a tus kirbitos del canal.</p></div>
+    <div class="tw-bar" id="tw-bar">
+      <div class="tw-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M4 2 2.5 6v14h5v2.5h3L13 20h4l5-5V2H4Zm16 12-3 3h-5l-2.5 2.5V17H5.5V4H20v10ZM16.5 7.5h-2v5h2v-5Zm-5 0h-2v5h2v-5Z"/></svg></div>
+      <div class="tw-txt" id="tw-txt"><b>Conectá tu cuenta de Twitch</b><span>Lo que ganes en la trivia y el juego se suma solo a tus kirbitos del canal. Lo ves en el chat con !points.</span></div>
+      <a class="btn tw-btn" id="tw-btn" href="/api/login">Conectar con Twitch</a>
+    </div>
     <h3 class="sub-h" id="quiz">¿Cuánto conocés a Godcita?</h3>
     <p class="sub-p">Girá cada objeto y tocá el que elegiría yo. Cada acierto suma una gema, y cada gema vale kirbitos.</p>
     <div class="quiz" id="quiz-app"></div>
@@ -1907,7 +2003,7 @@ const CONFIG = {
     <div class="cabeza"><h2>Privacidad y reglas</h2><p>Corto y claro.</p></div>
     <h3>Tus datos</h3>
     <ul>
-      <li>Lo que mandás en los formularios (mensajes, opiniones, propuestas de marcas, avisos) le llega solo a Bianca, en una planilla privada.</li>
+      <li>Lo que mandás en los formularios (mensajes, opiniones, propuestas de marcas, avisos) le llega solo a Bianca, por mail.</li>
       <li>Tu nombre es opcional. Si no lo ponés, aparece como "Anónimo".</li>
       <li>Nada se publica sin tu permiso: solo lo que marcaste como publicable y Bianca aprobó.</li>
       <li>El mail o usuario que dejás para "Avisame" se usa solo para avisarte que volví al stream.</li>
@@ -1927,7 +2023,7 @@ const CONFIG = {
   </div>
 </section>
 </main>
-<footer><div>Godcita · Bianca Galeano · hecho en Buenos Aires</div><div style="font-size:12px;opacity:.6;margin-top:6px">Versión 9-nov · todas las redes</div><div class="pie"><a href="#legal">Privacidad y reglas</a><a href="#contacto">Contacto para marcas</a><a href="#cartelera">Dejar mi opinión</a></div></footer>
+<footer><div>Godcita · Bianca Galeano · hecho en Buenos Aires</div><div style="font-size:12px;opacity:.6;margin-top:6px">Versión 26-nov</div><div class="pie"><a href="#legal">Privacidad y reglas</a><a href="#contacto">Contacto para marcas</a><a href="#cartelera">Dejar mi opinión</a></div></footer>
 <div id="velo" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status">Mail copiado</div>
 
@@ -1939,7 +2035,14 @@ const num=n=>n==null?"—":typeof n==="string"?n:n>=1e6?(n/1e6).toFixed(1).repla
 const C=CONFIG, colAv=["#E2337A","#9B5CF6","#1E9E90","#F5B82E","#2D5BD0"];
 const lee=(k,d)=>{try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}};
 const guarda=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
-const enviar=datos=>fetch(C.backendURL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify(datos)});
+const ASUNTOS={marca:"Nueva propuesta de marca",mensaje:"Nuevo mensaje de la comunidad",aviso:"Alguien quiere que le avises cuando vuelvas",envio:"Nuevo envío de la comunidad"};
+const enviar=async datos=>{
+  if(C.backendURL)return fetch(C.backendURL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify(datos)});
+  const d={...datos};const tenia=!!d.imagen;delete d.imagen;if(tenia)d.foto="Mandó una foto (no se adjunta por mail)";
+  d._subject=(ASUNTOS[d.tipo]||"Nuevo mensaje desde tu página")+(d.marca?": "+d.marca:"");
+  if(d.mail)d._replyto=d.mail;
+  const r=await fetch(C.formspree,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(d)});
+  if(!r.ok)throw new Error("formspree "+r.status);return r;};
 let REMOTO=null;  // datos del backend (respuestas, votos, ranking)
 
 // tema
@@ -1993,17 +2096,31 @@ $("#actualizado").textContent=C.actualizado?"Actualizado el "+C.actualizado:"Los
 
 // experiencia y marcas
 const logoOr=(src,txt,cls)=>safeSrc(src)?`<img src="${safeSrc(src)}" alt="Logo de ${esc(txt)}">`:esc(txt.split(" ").map(w=>w[0]).join("").slice(0,2));
-$("#exp").innerHTML=C.experiencia.map(x=>`<div class="panel"><div class="logo-e">${logoOr(x.logo,x.nombre)}</div><div><span class="tipo">${esc(x.tipo)}</span><h3>${esc(x.nombre)}</h3><p class="muted" style="font-size:15.5px">${esc(x.texto)}</p></div></div>`).join("");
+$("#exp").innerHTML=[...C.experiencia,...C.marcas.map(m=>({tipo:m.nombre==="Procyon Team"?"Equipo":"Marca",nombre:m.nombre,logo:m.logo,texto:m.detalle}))].map(x=>`<div class="panel"><div class="logo-e">${logoOr(x.logo,x.nombre)}</div><div><span class="tipo">${esc(x.tipo)}</span><h3>${esc(x.nombre)}</h3><p class="muted" style="font-size:15.5px">${esc(x.texto)}</p></div></div>`).join("");
 $("#marcas-lista").innerHTML=C.marcas.map(m=>`<div class="panel marca"><div class="logo-m">${safeSrc(m.logo)?`<img src="${safeSrc(m.logo)}" alt="Logo de ${esc(m.nombre)}">`:esc(m.nombre)}</div><div><b style="font-family:'Bricolage Grotesque';font-size:18px">${esc(m.nombre)}</b><div class="muted" style="font-size:14px">${esc(m.detalle)}</div></div></div>`).join("");
 
 // videos
-const nomCat={todos:"",gaming:"gaming",reviews:"reviews",padel:"pádel",futbol:"fútbol",lifestyle:"lifestyle",clips:"clips"};
+const nomCat={todos:"",gaming:"gaming",reviews:"colabs y reviews",ometv:"OmeTV",padel:"pádel",futbol:"fútbol",lifestyle:"lifestyle",clips:"clips"};
+function numCorto(n){return n>=1e6?(n/1e6).toFixed(1).replace(".0","").replace(".",",")+" M":n>=1e3?(n/1e3).toFixed(n>=1e4?0:1).replace(".0","").replace(".",",")+" mil":String(n)}
+function statsVideo(v){const st=v.stats||{};const it=[["vistas","👁","vistas"],["likes","♥","me gusta"],["compartidos","↗","compartidos"],["comentarios","💬","comentarios"]].filter(([k])=>st[k]!=null);
+  return it.length?`<div class="v-stats">${it.map(([k,i,n])=>`<span title="${n}"><i aria-hidden="true">${i}</i>${numCorto(st[k])}<span class="sr"> ${n}</span></span>`).join("")}</div>`:""}
 function pintarVideos(cat){
   const vs=cat==="todos"?C.videos:C.videos.filter(v=>v.cat===cat);
-  $("#lista-videos").innerHTML=vs.length?vs.map(v=>`<a class="video" ${v.video?`href="#" data-vid="${C.videos.indexOf(v)}"`:`href="${esc(v.url)}" target="_blank" rel="noopener"`}><div class="thumb">${safeSrc(v.img)?`<img src="${safeSrc(v.img)}" alt="">`:""}<span class="red">${esc(v.red)}</span><span class="play" aria-hidden="true">▶</span></div><h3>${esc(v.titulo)}</h3>${v.marca?`<span class="v-marca">${safeSrc(v.logoMarca)?`<img src="${safeSrc(v.logoMarca)}" alt="">`:""}${esc(v.marca)}</span>`:""}</a>`).join(""):`<p class="vacio">Pronto hay videos de ${nomCat[cat]}.</p>`;
+  $("#lista-videos").innerHTML=vs.length?vs.map(v=>`<div class="video-item"><a class="video" ${v.video?`href="#" data-vid="${C.videos.indexOf(v)}"`:`href="${esc(v.url)}" target="_blank" rel="noopener"`}><div class="thumb">${safeSrc(v.img)?`<img src="${safeSrc(v.img)}" alt="">`:""}<span class="red">${esc(v.red)}</span><span class="play" aria-hidden="true">▶</span></div><h3>${esc(v.titulo)}</h3>${statsVideo(v)}${v.marca?`<span class="v-marca">${safeSrc(v.logoMarca)?`<img src="${safeSrc(v.logoMarca)}" alt="">`:""}${esc(v.marca)}</span>`:""}</a>${(v.links||[]).length?`<div class="v-links">${v.links.map(l=>`<a href="${esc(l.u)}" target="_blank" rel="noopener">🛒 ${esc(l.t)}</a>`).join("")}</div>`:""}</div>`).join(""):`<p class="vacio"><span class="proximo">Próximamente</span> Videos de ${nomCat[cat]}.</p>`;
+  const subV=$("#sub-videos");
+  const SUBS={reviews:[["videos","Videos"],["shop","Shop"]],padel:[["videos","Videos"],["testeo","Testeo"],["clubs","Clubs"]]};
+  window.subVid=window.subVid||{};
+  if(SUBS[cat]){const act=window.subVid[cat]||"videos";subV.hidden=false;subV.dataset.cat=cat;
+    subV.innerHTML=SUBS[cat].map(([k,n])=>`<button type="button" data-sv="${k}" aria-pressed="${k===act}">${n}</button>`).join("");
+    const L=$("#lista-videos");
+    if(act==="shop")L.innerHTML=C.shop.map(p=>`<article class="shop-card"><div class="shop-img"><img src="${esc(p.img)}" alt="" loading="lazy">${safeSrc(p.logo)?`<span class="shop-logo"><img src="${safeSrc(p.logo)}" alt="${esc(p.marca)}"></span>`:""}</div><h3>${esc(p.nombre)}</h3><div class="shop-tiendas">${p.tiendas.map(l=>`<a class="btn" href="${esc(l.u)}" target="_blank" rel="noopener">Comprar en ${esc(l.t)} ↗</a>`).join("")}</div></article>`).join("");
+    if(act==="testeo")L.innerHTML=C.testeos.length?C.testeos.map(v=>`<div class="video-item"><a class="video" href="${esc(v.url)}" target="_blank" rel="noopener"><div class="thumb">${v.img?`<img src="${esc(v.img)}" alt="">`:""}<span class="red">${esc(v.red)}</span><span class="play" aria-hidden="true">▶</span></div><h3>${esc(v.titulo)}</h3>${statsVideo(v)}${v.marca?`<span class="v-marca">${v.logoMarca?`<img src="${esc(v.logoMarca)}" alt="" style="object-fit:contain;background:#fff">`:""}${esc(v.marca)}</span>`:""}</a></div>`).join(""):`<p class="vacio"><span class="proximo">Próximamente</span> Mis testeos de palas.</p>`;
+    if(act==="clubs")L.innerHTML=C.clubs.length?C.clubs.map(c=>`<article class="shop-card">${c.img?`<div class="shop-img"><img src="${esc(c.img)}" alt="" loading="lazy"></div>`:""}<h3>${esc(c.nombre)}</h3>${c.zona?`<p class="muted" style="margin:0 4px">${esc(c.zona)}</p>`:""}${c.nota?`<p style="margin:0 4px">${esc(c.nota)}</p>`:""}${c.url?`<div class="shop-tiendas"><a href="${esc(c.url)}" target="_blank" rel="noopener">Ver el club ↗</a></div>`:""}</article>`).join(""):`<p class="vacio"><span class="proximo">Próximamente</span> Los clubs donde entreno y juego.</p>`;
+  }else{subV.hidden=true}
   document.querySelectorAll("#filtros button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.cat===cat));
 }
 $("#filtros").onclick=e=>{const b=e.target.closest("button");if(b)pintarVideos(b.dataset.cat)};
+$("#sub-videos").onclick=e=>{const b=e.target.closest("button");if(b){const c=e.currentTarget.dataset.cat;window.subVid[c]=b.dataset.sv;pintarVideos(c)}};
 
 pintarVideos("todos");
 
@@ -2013,16 +2130,16 @@ $("#estante").innerHTML=C.juegos.map(j=>`<div class="juego">${safeSrc(j.img)?`<i
 const sl=$("#slider"); sl.max=C.dia.length-1;
 $("#horas").innerHTML=C.dia.map(x=>`<span>${x.h}h</span>`).join("");
 function pintarDia(i){const x=C.dia[i];$("#reloj").innerHTML=`${String(x.h).padStart(2,"0")}<small>:00 hs</small>`;$("#actividad").innerHTML=`<div class="emoji">${x.e}</div><h3>${esc(x.t)}</h3><p class="muted" style="font-size:18px">${esc(x.d)}</p>`}
-sl.oninput=()=>pintarDia(+sl.value); sl.value=Math.min(4,C.dia.length-1); pintarDia(+sl.value);
+sl.oninput=()=>pintarDia(+sl.value); sl.value=0; pintarDia(+sl.value);
 $("#vlogs").innerHTML=C.vlogs.length?C.vlogs.map(v=>`<a class="video" href="${esc(v.url)}" target="_blank" rel="noopener"><div class="thumb" style="aspect-ratio:16/9">${safeSrc(v.img)?`<img src="${safeSrc(v.img)}" alt="">`:""}<span class="play" aria-hidden="true">▶</span></div><h3>${esc(v.titulo)}</h3></a>`).join("")
-  :`<div class="vlog-vacio"><b>Se vienen los vlogs</b>Muy pronto, mis días completos en video: facu, clases, pádel, stream y todo lo del medio.</div>`;
+  :`<div class="vlog-vacio"><b><span class="proximo">Próximamente</span> Vlogs</b>Mis días completos en video: laburo, pádel, facu y todo lo del medio.</div>`;
 $("#eventos-lista").innerHTML=C.eventos.map(ev=>`<article class="panel evento"><div class="img">${safeSrc(ev.img)?`<img class="logo-chico" src="${safeSrc(ev.img)}" alt="Logo de ${esc(ev.nombre)}">`:"Foto del evento"}</div><div class="txt"><span class="fecha">${esc(ev.fecha)}</span><h3>${esc(ev.nombre)}</h3><p class="muted">${esc(ev.texto)}</p></div></article>`).join("");
 
 // comunidad
 const med=["🥇","🥈","🥉"];
-$("#top").innerHTML=C.kirbitosTop.map((g,i)=>`<div class="panel fan ${i===0?"oro":""}"><span class="medalla">${med[i]||""}</span><div class="av" style="background:${colAv[i%5]}">${esc(g.nombre[0].toUpperCase())}</div><h3>${esc(g.nombre)}</h3><div class="muted" style="font-size:14px">${esc(g.desde)}</div><span class="rol">${esc(g.rol)}</span></div>`).join("");
+$("#top").innerHTML=!C.kirbitosTop.length?`<div class="panel vacio-comu" style="grid-column:1/-1;padding:22px 24px"><span class="proximo">Próximamente</span><h3 style="margin-top:10px">Los kirbitos de oro</h3><p class="muted">Los que están en cada stream, con el rol que se ganaron y desde cuándo me bancan.</p></div>`:C.kirbitosTop.map((g,i)=>`<div class="panel fan ${i===0?"oro":""}"><span class="medalla">${med[i]||""}</span><div class="av" style="background:${colAv[i%5]}">${esc(g.nombre[0].toUpperCase())}</div><h3>${esc(g.nombre)}</h3><div class="muted" style="font-size:14px">${esc(g.desde)}</div><span class="rol">${esc(g.rol)}</span></div>`).join("");
 $("#mas-fans").innerHTML=C.masKirbitos.map(n=>`<span>${esc(n)}</span>`).join("");
-$("#comentarios").innerHTML=C.comentarios.map(c=>`<div class="panel com"><p>“${esc(c.texto)}”</p><span>${esc(c.autor)} en ${esc(c.red)}</span></div>`).join("");
+$("#comentarios").innerHTML=!C.comentarios.length?`<div class="panel com"><p><span class="proximo">Próximamente</span></p><span>Los comentarios más lindos de la comunidad van a aparecer acá.</span></div>`:C.comentarios.map(c=>`<div class="panel com"><p>“${esc(c.texto)}”</p><span>${esc(c.autor)} en ${esc(c.red)}</span></div>`).join("");
 $("#sr-t").textContent=C.misSueños.real.titulo; $("#sr-x").textContent=C.misSueños.real.texto;
 $("#sm-t").textContent=C.misSueños.magico.titulo; $("#sm-x").textContent=C.misSueños.magico.texto;
 
@@ -2036,44 +2153,20 @@ function setModo(m){modo=m;$("#tab-dia").setAttribute("aria-selected",m==="dia")
 $("#tab-dia").onclick=()=>setModo("dia"); $("#tab-contame").onclick=()=>setModo("contame");
 function pintarRespuestas(lista){
   $("#respuestas").innerHTML=lista.length?lista.map(r=>`<div class="panel resp"><div class="q">${esc(r.pregunta)}${r.animo?`<span class="animo">${esc(r.animo)}</span>`:""}</div><p>${esc(r.respuesta)}</p><div class="de">${esc(r.nombre||"Anónimo")}</div>${r.respuestaBianca?`<div class="vuelta"><b>Bianca respondió</b>${esc(r.respuestaBianca)}</div>`:""}</div>`).join("")
-  :`<div class="panel resp"><p class="muted">Todavía no hay mensajes publicados. ¡Sé la primera persona!</p></div>`;
+  :`<div class="panel resp"><p class="muted"><span class="proximo">Próximamente</span> Acá van a aparecer las respuestas que publique. ¡Sé la primera persona en contarme algo!</p></div>`;
 }
-pintarRespuestas(C.backendURL?[]:[{pregunta:"¿Qué cosa chiquita te alegra el día?",respuesta:"Ejemplo: el primer mate de la mañana con sol.",nombre:"Ejemplo",respuestaBianca:"Ejemplo de respuesta tuya: ¡el mate con sol no tiene rival!"}]);
+pintarRespuestas([]);
 $("#form-charla").onsubmit=async e=>{
   e.preventDefault();
   const txt=$("#respuesta").value.trim(), est=$("#estado-form");
   if(txt.length<2){est.textContent="Escribí tu mensaje antes de enviar.";$("#respuesta").focus();return}
   const datos={tipo:"mensaje",pregunta:modo==="dia"?preguntaHoy:"Contame algo",animo:modo==="contame"?document.querySelector('input[name=animo]:checked').value:"",respuesta:txt,nombre:$("#nombre").value.trim()||"Anónimo",publicar:$("#publicar").checked};
-  if(!C.backendURL){est.textContent="Modo prueba: cuando conectemos tu planilla, los mensajes te van a llegar.";return}
+  if(!C.backendURL&&!C.formspree){est.textContent="Modo prueba: cuando conectemos tu planilla, los mensajes te van a llegar.";return}
   try{await enviar(datos);est.textContent=datos.publicar?"¡Gracias! Bianca lo va a leer y, si lo aprueba, aparece acá.":"¡Gracias! Le llega solo a Bianca.";$("#respuesta").value=""}
   catch(err){est.textContent="No se pudo enviar. Revisá tu conexión y probá de nuevo."}
 };
 
 // esto o aquello + compatibilidad
-let misVotos=lee("eoa-votos",{});
-function pintarVotos(){
-  const conteo=(REMOTO&&REMOTO.votos)||{};
-  $("#votos").innerHTML=C.estoOAquello.map((q,i)=>{
-    const mio=misVotos[i], c=conteo[i]||[0,0];
-    const tot=c[0]+c[1]+(mio!=null&&!REMOTO?1:0);
-    const cnt=[c[0]+(mio===0&&!REMOTO?1:0), c[1]+(mio===1&&!REMOTO?1:0)];
-    const opt=(k,txt)=>{const p=tot?Math.round(cnt[k]/tot*100):0;
-      return `<button data-q="${i}" data-o="${k}" aria-pressed="${mio===k}"><i class="fill" style="width:${mio!=null?p:0}%"></i><span>${esc(txt)}</span>${mio!=null?`<span class="pct">${p}% de la comunidad</span>`:""}${mio!=null&&q.bianca===k?`<span class="bianca">Bianca</span>`:""}</button>`};
-    return `<div class="panel voto"><div class="q">${esc(q.p)}</div><div class="opciones">${opt(0,q.a)}${opt(1,q.b)}</div></div>`}).join("");
-  // compatibilidad
-  const comunes=C.estoOAquello.map((q,i)=>[q.bianca,misVotos[i]]).filter(([b,m])=>b!=null&&m!=null);
-  if(comunes.length<5){$("#compat-n").textContent="?";$("#medidor").style.setProperty("--p",0);$("#compat-t").textContent="¿Qué tan amigos seríamos?";
-    $("#compat-x").textContent=`Votá ${Math.max(0,5-comunes.length)} preguntas más (de las que Bianca ya votó) y te digo nuestro porcentaje de amistad.`;return}
-  const p=Math.round(comunes.filter(([b,m])=>b===m).length/comunes.length*100);
-  $("#compat-n").textContent=p+"%"; $("#medidor").style.background=`conic-gradient(var(--rosa) ${p}%, var(--superficie) 0)`;
-  const [t,x]=p>=80?["Amigos de toda la vida","Somos casi la misma persona. Te espero en el stream con el mate listo."]:p>=60?["Muy buena química","Tenemos mucho en común y lo que no, lo discutimos en el chat."]:p>=40?["Amigos con debate","Coincidimos en algunas, en otras no. Ideal para charlas largas."]:["Polos opuestos","No coincidimos casi en nada… y justamente por eso nos llevaríamos bien."];
-  $("#compat-t").textContent=t; $("#compat-x").textContent=`Coincidimos en ${comunes.filter(([b,m])=>b===m).length} de ${comunes.length} preguntas. ${x}`;
-}
-$("#votos").onclick=e=>{const b=e.target.closest("button[data-q]");if(!b)return;const q=+b.dataset.q,o=+b.dataset.o;
-  const nuevo=misVotos[q]==null; misVotos[q]=o; guarda("eoa-votos",misVotos);
-  if(C.backendURL&&nuevo)enviar({tipo:"voto",id:q,opcion:o}).catch(()=>{});
-  pintarVotos();};
-pintarVotos();
 
 // servicios y contacto
 $("#servs").innerHTML=C.servicios.map(([t,d])=>`<div class="panel"><h3>${esc(t)}</h3><p class="muted" style="font-size:15.5px">${esc(d)}</p></div>`).join("");
@@ -2157,7 +2250,7 @@ let pintarRanking=()=>{};
     if(msg)msg.v-=dt;
     obs=obs.filter(o=>o.x>-60);
     mon=mon.filter(m=>{if(Math.abs(m.x-PX)<24&&Math.abs(m.y-(jug.y-20))<30){ganar(m.oro?5:1,m.x,m.y);return false}return m.x>-20});
-    for(const o of obs){if(PX+14>o.x+4&&PX-14<o.x+o.w-4&&jug.y>PISO-o.h+4){estado="fin";if(partida>record){record=partida;guarda("kirbitos-record",record);msg={t:"¡Nuevo récord!",v:90}}marcador();pintarRanking();dibujar();return}}
+    for(const o of obs){if(PX+14>o.x+4&&PX-14<o.x+o.w-4&&jug.y>PISO-o.h+4){estado="fin";if(partida>0&&window.kirbitosSync)window.kirbitosSync("juego",partida);if(partida>record){record=partida;guarda("kirbitos-record",record);msg={t:"¡Nuevo récord!",v:90}}marcador();pintarRanking();dibujar();return}}
     dibujar();requestAnimationFrame(loop);
   }
   reset();marcador();dibujar();pintarRanking();
@@ -2197,18 +2290,18 @@ $("#form-marca").onsubmit=async e=>{e.preventDefault();const est=$("#fm-estado")
   if(!marca){est.textContent="Escribí el nombre de la marca.";$("#fm-marca").focus();return}
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)){est.textContent="Revisá el mail: así no te puedo responder.";$("#fm-mail").focus();return}
   const datos={tipo:"marca",marca,mail,modalidad:$("#fm-modo").value,paquete:$("#fm-paquete").value,presupuesto:$("#fm-pres").value,objetivo:$("#fm-obj").value,fechas:$("#fm-fecha").value.trim(),mensaje:$("#fm-msg").value.trim()};
-  if(!C.backendURL){location.href=`mailto:${C.email}?subject=${encodeURIComponent("Propuesta de "+marca)}&body=${encodeURIComponent(`Marca: ${marca}\nMail: ${mail}\nModalidad: ${datos.modalidad}\nPaquete: ${datos.paquete}\nPresupuesto: ${datos.presupuesto}\nObjetivo: ${datos.objetivo}\nFechas: ${datos.fechas}\n\n${datos.mensaje}`)}`;est.textContent="Se abrió tu mail con la propuesta lista para enviar.";return}
+  if(!C.backendURL&&!C.formspree){location.href=`mailto:${C.email}?subject=${encodeURIComponent("Propuesta de "+marca)}&body=${encodeURIComponent(`Marca: ${marca}\nMail: ${mail}\nModalidad: ${datos.modalidad}\nPaquete: ${datos.paquete}\nPresupuesto: ${datos.presupuesto}\nObjetivo: ${datos.objetivo}\nFechas: ${datos.fechas}\n\n${datos.mensaje}`)}`;est.textContent="Se abrió tu mail con la propuesta lista para enviar.";return}
   try{await enviar(datos);est.textContent="¡Gracias! Te respondo en las próximas 48 horas.";e.target.reset()}catch(err){est.textContent="No se pudo enviar. Escribime directo a "+C.email}};
 $("#modos").innerHTML=C.modalidades.map(([t,d],i)=>`<div class="panel modo ${i===1?"dest":""}"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("");
 $("#proceso").innerHTML=C.proceso.map(([t,d])=>`<li class="panel"><h3>${esc(t)}</h3><p class="muted">${esc(d)}</p></li>`).join("");
 // comunidad extra
 if(C.discord.url){$("#discord-btn").href=C.discord.url;if(C.discord.miembros)$("#discord-txt").textContent=`${num(C.discord.miembros)} kirbitos ya están adentro. Charlas, avisos de stream, partidas y sorteos.`}
-else{$("#discord-btn").removeAttribute("href");$("#discord-btn").textContent=VAC?"Falta el link del Discord":"Muy pronto"}
+else{$("#discord-btn").removeAttribute("href");$("#discord-btn").textContent="Próximamente";$("#discord-btn").style.pointerEvents="none"}
 ocultar("bloque-discord",!C.discord.url&&!VAC);
 $("#proximos").innerHTML=C.proximos.map(x=>`<li><span><b>${esc(x.titulo)}</b><br><span class="muted" style="font-size:14px">${esc(x.detalle)}</span></span><span class="muted" style="font-size:14px;white-space:nowrap">${esc(x.fecha)}</span></li>`).join("");
 if(C.kirbitoDelMes.nombre){$("#kdm-av").textContent=C.kirbitoDelMes.nombre[0].toUpperCase();$("#kdm-n").textContent=C.kirbitoDelMes.nombre;$("#kdm-m").textContent=C.kirbitoDelMes.motivo}
-else{$("#kdm-n").textContent="Puede ser vos";$("#kdm-m").textContent="Cada mes destaco a alguien de la comunidad que la rompió. Estate atento en el stream."}
-$("#colabs").innerHTML=C.colabs.map(c=>`<a href="${esc(c.url)}" target="_blank" rel="noopener"><b>${esc(c.nombre)}</b> <span class="muted">· ${esc(c.que)}</span></a>`).join("")||(VAC?`<span class="muted">Sumá acá a los streamers con los que hiciste colabs. ${tag()}</span>`:"");
+else{$("#kdm-n").innerHTML='<span class="proximo">Próximamente</span>';$("#kdm-m").textContent="Cada mes voy a destacar a alguien de la comunidad que la rompió. ¡Puede ser vos!"}
+$("#colabs").innerHTML=C.colabs.map(c=>`<a href="${esc(c.url)}" target="_blank" rel="noopener"><b>${esc(c.nombre)}</b> <span class="muted">· ${esc(c.que)}</span></a>`).join("")||`<span class="proximo">Próximamente</span> <span class="muted">Las colabs con otros streamers van a aparecer acá.</span>`;
 ocultar("bloque-colabs",!C.colabs.length&&!VAC);
 $("#premios").innerHTML=C.premios.map(p=>`<li><span>${esc(p.nombre)}</span><b>${num(p.costo)} kirbitos</b></li>`).join("");
 // ocultar vacíos en secciones existentes
@@ -2248,7 +2341,7 @@ if(!VAC){
         else sec.animate([{opacity:0,transform:"scale(.96)"},{opacity:1,transform:"none"}],{duration:320,easing:"cubic-bezier(.2,.85,.25,1)"});
       }}
     document.body.classList.add("con-hoja");
-    setTimeout(()=>{if(ancla){const a=document.getElementById(ancla);if(a)sec.scrollTo({top:a.offsetTop-80,behavior:"smooth"})}sec.querySelector(".volver").focus({preventScroll:true})},yaAbierta?0:200);
+    setTimeout(()=>{if(ancla){const a=document.getElementById(ancla);if(a&&a.tagName==="DETAILS")a.open=true;if(a)sec.scrollTo({top:a.offsetTop-80,behavior:"smooth"})}sec.querySelector(".volver").focus({preventScroll:true})},yaAbierta?0:200);
   }
   let cerrando=false;
   function cerrar(){
@@ -2298,7 +2391,7 @@ if(!VAC){
 
   $("#pc-texto").textContent=C.pc.texto;
   const fm=n=>"$"+Number(n).toLocaleString("es-AR");
-  $("#pc-progreso").innerHTML=pcPct!=null?`<div class="pc-barra" role="progressbar" aria-valuenow="${pcPct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pcPct}%"></i></div><p class="muted">${fm(C.pc.juntado)} de ${fm(C.pc.meta)} · ${pcPct}%</p>`:(C.mostrarVacios?`<p class="muted" style="margin-top:12px">Cargá la meta y lo juntado para mostrar la barra de progreso. <span class="vacio-tag">completar</span></p>`:"");
+  $("#pc-progreso").innerHTML=pcPct!=null?`<div class="pc-barra" role="progressbar" aria-valuenow="${pcPct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pcPct}%"></i></div><p class="muted">${fm(C.pc.juntado)} de ${fm(C.pc.meta)} · ${pcPct}%</p>`:(C.mostrarVacios?`<p class="muted" style="margin-top:12px"><span class="proximo">Próximamente</span> La barra con lo que voy juntando.</p>`:"");
   $("#pc-partes").innerHTML=(C.pc.partes||[]).length?`<span class="muted" style="font-size:14px;align-self:center">Me falta:</span>`+C.pc.partes.map(x=>`<span class="tag">${esc(x)}</span>`).join(""):"";
 })();
 
@@ -2326,14 +2419,14 @@ if(!VAC){
 
   // cartelera
   const rots=[-2,1.5,-1,2,-1.5,1];
-  const nota=(n,i)=>`<article class="nota ${esc(n.color||"amarillo")}" style="--rot:${rots[i%rots.length]}deg"><b>${esc(n.tipo)}</b><p>${esc(n.texto)}</p>${n.autor?`<small>— ${esc(n.autor)}</small>`:""}</article>`;
+  const nota=(n,i)=>`<article class="nota ${esc(n.color||"amarillo")}" style="--rot:${rots[i%rots.length]}deg"><b>${esc(n.tipo)}</b><p>${esc(n.texto)}</p>${/^https:\/\//.test(n.url||"")?`<a class="nota-link" href="${esc(n.url)}" target="_blank" rel="noopener">Ver en X ↗</a>`:""}${n.autor?`<small>— ${esc(n.autor)}</small>`:""}</article>`;
   window.pintarCartelera=extra=>{const todas=[...C.cartelera,...(extra||[])];
     $("#cart-mini").innerHTML=todas.map(nota).join("");$("#corcho").innerHTML=todas.map(nota).join("")};
   pintarCartelera();
   $("#form-opinion").onsubmit=async e=>{e.preventDefault();const t=$("#op-texto").value.trim(),est=$("#op-estado");
     if(t.length<2){est.textContent="Escribí tu opinión antes de enviar.";$("#op-texto").focus();return}
     const datos={tipo:"mensaje",pregunta:"Opinión: "+$("#op-tema").value,animo:"",respuesta:t,nombre:$("#op-nombre").value.trim()||"Anónimo",publicar:$("#op-publicar").checked};
-    if(!C.backendURL){est.textContent="Modo prueba: cuando conectemos tu planilla, las opiniones te van a llegar.";return}
+    if(!C.backendURL&&!C.formspree){est.textContent="Modo prueba: cuando conectemos tu planilla, las opiniones te van a llegar.";return}
     try{await enviar(datos);est.textContent=datos.publicar?"¡Gracias! Si Bianca la aprueba, aparece en la cartelera.":"¡Gracias! Le llega solo a Bianca.";$("#op-texto").value=""}catch(err){est.textContent="No se pudo enviar. Probá de nuevo."}};
 
   // trivia (v13)
@@ -2425,6 +2518,7 @@ if(!VAC){
       const premios=C.gemas.slice(0,aciertos); const corona=aciertos===N;
       const ganados=premios.reduce((a,g)=>a+g.v,0)+(corona?C.coronaBonus:0); const puede=lee("quiz-dia","")!==hoyQ();
       if(puede&&ganados){guarda("kirbitos-total",lee("kirbitos-total",0)+ganados);guarda("quiz-dia",hoyQ())}
+      if(ganados&&window.kirbitosSync)window.kirbitosSync("trivia",ganados);
       const [t,x]=corona?["¡Me conocés de memoria!","Te ganaste la corona de kirbito oficial."]:aciertos>=3?["¡Me conocés un montón!","Te falta muy poquito."]:aciertos?["¡Bien ahí!","Vamos conociéndonos."]:["¡Uy! A conocernos más","Pasá por Sobre mí y volvé a intentar."];
       const items=[...premios.map(g=>({svg:gemaSVG(g),n:g.n,v:g.v})),...(corona?[{svg:coronaSVG,n:"Corona",v:C.coronaBonus}]:[])];
       $("#quiz-app").innerHTML=`<div class="panel combo"><span class="etq">Abrí tu caja</span><h3>${t}</h3><p class="muted">${x} Acertaste ${aciertos} de ${N}.</p>
@@ -2514,15 +2608,31 @@ if(!VAC){
         ${M.spotifyPerfil?`<a class="btn" style="margin-top:16px;background:#1ED760;color:#121212" href="${esc(M.spotifyPerfil)}" target="_blank" rel="noopener">Seguirme en Spotify</a>`:""}</div>
         <div class="panel"><span class="etq">Lo más escuchado de la semana</span>${MUSICA.top.length?`<ol class="top-semana">${MUSICA.top.map(t=>`<li><div><b>${esc(t.nombre)}</b><div class="muted" style="font-size:13.5px">${esc(t.artista)} · ${esc(t.veces)} veces</div></div></li>`).join("")}</ol>`:`<p class="muted" style="margin-top:8px">Se completa solo cuando conectemos la música.</p>`}</div></div>`;
     }
-    html+=r.grupos.map(g=>`<div class="reco-grupo">${g.t?`<h3 class="sub-h" style="font-size:24px;margin-bottom:12px">${esc(g.t)}</h3>`:""}<div class="reco-items">${g.items.map(it=>it.puntaje!=null
+    if(r.miro){
+      window.subMiro=window.subMiro||"Anime";
+      const est=n=>`<span class="estrellas" role="img" aria-label="${n} de 5 estrellas">${"★".repeat(n)}<span class="apagadas">${"★".repeat(5-n)}</span></span>`;
+      const lista=(C.miro||[]).filter(m=>m.tipo===window.subMiro);
+      html+=`<div class="sub-tabs" role="tablist">${[["Anime","Animes"],["Película","Películas"]].map(([k,n])=>`<button type="button" role="tab" data-miro="${k}" aria-pressed="${k===window.subMiro}">${n}</button>`).join("")}</div>`;
+      html+=lista.length?`<p class="sub-p" style="margin-top:4px">Lo que vi y mi puntaje, sin spoilers.</p><div class="miro">${lista.map(m=>`<article class="miro-card">
+        <div class="miro-tapa"><img src="${esc(m.img)}" alt="Portada de ${esc(m.nombre)}" loading="lazy"><span class="miro-tipo">${esc(m.tipo)}</span></div>
+        <h4>${esc(m.nombre)}</h4>${est(m.estrellas)}
+        ${m.detalle?`<ul class="miro-det">${Object.entries(m.detalle).map(([k,v])=>`<li><span>${esc(k)}</span>${est(v)}</li>`).join("")}</ul>`:""}</article>`).join("")}</div>`
+        :`<div class="panel" style="padding:24px"><span class="proximo">Próximamente</span><p class="muted" style="margin-top:10px">Las películas que vi, con mi puntaje y sin spoilers.</p></div>`;
+    }
+    let grupos=r.grupos;
+    if(r.subtabs){window.subReco=window.subReco||r.subtabs[0][0];
+      html+=`<div class="sub-tabs" role="tablist">${r.subtabs.map(([k,n])=>`<button type="button" role="tab" data-sub="${k}" aria-pressed="${k===window.subReco}">${esc(n)}</button>`).join("")}</div>`;
+      grupos=grupos.filter(g=>g.sub===window.subReco);}
+    html+=grupos.map(g=>!g.items.length?`<div class="reco-grupo">${g.t?`<h3 class="sub-h" style="font-size:24px;margin-bottom:12px">${esc(g.t)}</h3>`:""}<p class="muted">${esc(g.vacio||"Muy pronto.")}</p></div>`:`<div class="reco-grupo">${g.t?`<h3 class="sub-h" style="font-size:24px;margin-bottom:12px">${esc(g.t)}</h3>`:""}<div class="reco-items">${g.items.map(it=>it.puntaje!=null
       ?`<article class="panel resena"><div class="cab"><h3>${esc(it.nombre)}${it.anio?` <span class="muted" style="font-size:15px">(${esc(it.anio)})</span>`:""}</h3>${estrellas(it.puntaje)}</div>
          <div class="criterios">${Object.entries(it.criterios||{}).map(([k,v])=>`<div><span>${esc(k)}</span>${estrellas(v)}</div>`).join("")}</div>
          <div class="por-que"><b>Por qué</b>${esc(it.opinion)}</div>${bloqueCoincido(clave(rc,it))}</article>`
-      :`<div class="panel reco-item"><h3>${esc(it.nombre)}${it.nombre==="Completar"&&C.mostrarVacios?' <span class="vacio-tag">completar</span>':""}</h3><p class="muted">${esc(it.nota)}</p>${it.url?`<a href="${esc(it.url)}" target="_blank" rel="noopener">Ver más</a>`:""}</div>`).join("")}</div></div>`).join("");
+      :`<div class="panel reco-item">${it.img?`<img class="reco-img" src="${esc(it.img)}" alt="" loading="lazy">`:""}${it.logo?`<img class="reco-logo" src="${esc(it.logo)}" alt="">`:""}<h3>${esc(it.nombre)}${it.nombre==="Completar"&&C.mostrarVacios?' <span class="vacio-tag">completar</span>':""}</h3><p class="muted">${esc(it.nota)}</p>${it.url?`<a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.linkTxt||"Ver el video")} ↗</a>`:""}</div>`).join("")}</div></div>`).join("");
     $("#reco-panel").innerHTML=html;
-    $("#reco-gaming-extra").hidden=rc!=="gaming";
+    $("#reco-gaming-extra").hidden=true;
   };
   $("#reco-tabs").onclick=e=>{const b=e.target.closest("button");if(b){rc=b.dataset.r;pintarReco()}};
+  $("#reco-panel").addEventListener("click",e=>{const b=e.target.closest(".sub-tabs button");if(!b)return;if(b.dataset.miro)window.subMiro=b.dataset.miro;else window.subReco=b.dataset.sub;pintarReco()});
   document.querySelectorAll("[data-reco]").forEach(a=>a.addEventListener("click",()=>{rc=a.dataset.reco;pintarReco()}));
   pintarReco();
 })();
@@ -2577,11 +2687,11 @@ if(!VAC){
 
   // buscador
   const IDX=[
-    ["Sobre mí","Quién soy, signo, estudios, sueños","sobre"],["Un día con Godcita","Mi rutina y vlogs","dia"],["Mi próxima PC","Aportar por Mercado Pago, avisame cuando vuelva","pc"],
+    ["Sobre mí","Quién soy, signo, estudios, sueños","sobre"],["Un día con Godcita","Mis vlogs","dia"],["Mi próxima PC","Aportar por Mercado Pago, avisame cuando vuelva","pc"],
     ["Por qué trabajar conmigo","Diferenciales para marcas","porque"],["Experiencia","Co-streams, eventos y marcas","experiencia"],["Tarifas y paquetes","Canje, tarifa o a medida","contacto"],["Pedir propuesta","Formulario para marcas","contacto"],["Media kit PDF","Descargar","contacto"],
-    ["Números","Estadísticas de todas mis redes","numeros"],["Contenido","Videos de reviews, pádel, fútbol, lifestyle","videos"],["Lo que juego","Valorant, CS y más","juegos"],["Eventos","Donde estuve","eventos"],
-    ["Recomendaciones","Pelis, anime, música, pádel, gaming","recomendaciones"],["Música","Escuchando ahora y top de la semana","recomendaciones"],
-    ["Los kirbitos","Mi comunidad","comunidad"],["Pregunta del día","Conozcámonos","comunidad","conozcamonos"],["¿Esto o aquello?","Compatibilidad de amistad","comunidad","eoa"],
+    ["Números","Estadísticas de todas mis redes","numeros"],["Contenido","Videos de reviews, pádel, fútbol, lifestyle","videos"],["Lo que juego","Valorant, CS y más","juegos"],
+    ["Recomendaciones","Zona gaming, anime, pelis y música","recomendaciones"],["Anime y pelis","Lo que miro, con puntaje","recomendaciones"],["Música","Escuchando ahora y top de la semana","recomendaciones"],
+    ["Los kirbitos","Mi comunidad","comunidad"],["Pregunta del día","Conozcámonos","comunidad","conozcamonos"],
     ["Setups","Mostrá tu setup, mandame algo para opinar","setups"],["Mi setup anterior","Cómo era mi lugar de stream","setups"],["Rubros para marcas","Gaming, pádel, fútbol, lifestyle","contacto"],["Trivia","¿Cuánto conocés a Godcita? Ganá gemas","quiz"],["Jugar","Juntá kirbitos","jugar"],["Premios","Canjear kirbitos","jugar"],["La cartelera","Hits, tweets, chismecitos y opiniones","cartelera"],["Dejar mi opinión","Qué opinás de Godcita","cartelera"],
     ["Privacidad y reglas","Datos y reglas de los kirbitos","legal"]];
   document.body.insertAdjacentHTML("beforeend",`<div class="buscador" id="buscador" role="dialog" aria-modal="true" aria-label="Buscar en la página"><div class="bus-caja"><input id="bus-in" type="search" placeholder="¿Qué buscás? Tarifas, trivia, números…" autocomplete="off"><div class="bus-sug" id="bus-sug"></div><ul class="bus-res" id="bus-res"></ul></div></div>`);
@@ -2626,7 +2736,7 @@ if(!VAC){
   // avisame cuando vuelva
   $("#form-aviso").onsubmit=async e=>{e.preventDefault();const v=$("#aviso-in").value.trim(),est=$("#aviso-estado");
     if(v.length<3){est.textContent="Dejá tu mail o tu usuario de Twitch.";$("#aviso-in").focus();return}
-    if(!C.backendURL){est.textContent="Modo prueba: cuando conectemos la planilla, te va a llegar el aviso.";return}
+    if(!C.backendURL&&!C.formspree){est.textContent="Modo prueba: cuando conectemos la planilla, te va a llegar el aviso.";return}
     try{await enviar({tipo:"aviso",contacto:v});est.textContent="¡Listo! Te aviso cuando vuelva al stream.";$("#aviso-in").value=""}catch(err){est.textContent="No se pudo guardar. Probá de nuevo."}};
 })();
 
@@ -2665,7 +2775,7 @@ if(!VAC){
     $("#chat-muro").innerHTML=lista.length?lista.map(x=>`<div class="msg"><div class="quien"><span class="av">${safeSrc(x.avatar)?`<img src="${safeSrc(x.avatar)}" alt="">`:esc((x.nombre||"A")[0].toUpperCase())}</span><div><b>${esc(x.nombre||"Anónimo")}</b>${x.usuario?`<small> ${esc(x.usuario)}</small>`:""}</div></div>
       <div class="burbuja">${x.cat?`<span class="tag-cat">${x.cat==="opinar"?"¿Qué opinás de esto?":"Mi setup"}</span>`:""}${safeSrc(x.foto)?`<img src="${safeSrc(x.foto)}" alt="Foto enviada por ${esc(x.nombre||"un kirbito")}" loading="lazy">`:""}<span>${esc(x.texto)}</span>${x.link&&/^https?:\/\//.test(x.link)?`<a href="${esc(x.link)}" target="_blank" rel="noopener nofollow">${esc(x.link)}</a>`:""}</div>
       ${x.opinion?`<div class="resp-b"><small>Bianca opina</small>${esc(x.opinion)}</div>`:""}</div>`).join("")
-      :`<p class="muted">Todavía no hay envíos publicados. ¡Mandá el tuyo!</p>`};
+      :`<p class="muted"><span class="proximo">Próximamente</span> Acá van a aparecer los setups y las cosas que me manden. ¡Mandá el tuyo!</p>`};
   pintarEnvios();
 
   // formulario de envío
@@ -2681,7 +2791,7 @@ if(!VAC){
   $("#form-envio").onsubmit=async e=>{e.preventDefault();const t=$("#ev-texto").value.trim(),est=$("#ev-estado");
     if(t.length<2&&!fotoB64){est.textContent="Escribí algo o subí una foto antes de enviar.";$("#ev-texto").focus();return}
     const datos={tipo:"envio",categoria:cat,texto:t,link:$("#ev-link").value.trim(),nombre:$("#ev-nombre").value.trim()||"Anónimo",usuario:$("#ev-user").value.trim(),publicar:$("#ev-publicar").checked,imagen:fotoB64};
-    if(!C.backendURL){est.textContent="Modo prueba: cuando conectemos la planilla, tu envío le va a llegar a Bianca.";return}
+    if(!C.backendURL&&!C.formspree){est.textContent="Modo prueba: cuando conectemos la planilla, tu envío le va a llegar a Bianca.";return}
     est.textContent="Enviando…";
     try{await enviar(datos);est.textContent=datos.publicar?"¡Gracias! Si Bianca lo aprueba, aparece acá con su opinión.":"¡Gracias! Le llega solo a Bianca.";e.target.reset();fotoB64="";$("#ev-prev").innerHTML=""}catch(err){est.textContent="No se pudo enviar. Probá con una foto más chica o de nuevo en un rato."}};
 })();
@@ -2709,7 +2819,7 @@ function aplicarStats(st){
 
 // datos remotos (respuestas aprobadas, votos de la comunidad, ranking)
 if(C.backendURL){
-  fetch(C.backendURL).then(r=>r.json()).then(d=>{REMOTO=d;try{aplicarStats(d.stats)}catch(e){}if(window.pintarReco)pintarReco();if(window.pintarEnvios)pintarEnvios(d.envios||[]);const rs=d.respuestas||[];pintarRespuestas(rs.filter(r=>!/^Opinión:/.test(r.pregunta)));pintarCartelera(rs.filter(r=>/^Opinión:/.test(r.pregunta)).map(r=>({tipo:r.pregunta.replace("Opinión: ",""),texto:r.respuesta,autor:r.nombre||"Anónimo",color:"turquesa"})));pintarVotos();pintarRanking()}).catch(()=>pintarRespuestas([]));
+  fetch(C.backendURL).then(r=>r.json()).then(d=>{REMOTO=d;try{aplicarStats(d.stats)}catch(e){}if(window.pintarReco)pintarReco();if(window.pintarEnvios)pintarEnvios(d.envios||[]);const rs=d.respuestas||[];pintarRespuestas(rs.filter(r=>!/^Opinión:/.test(r.pregunta)));pintarCartelera(rs.filter(r=>/^Opinión:/.test(r.pregunta)).map(r=>({tipo:r.pregunta.replace("Opinión: ",""),texto:r.respuesta,autor:r.nombre||"Anónimo",color:"turquesa"})));pintarRanking()}).catch(()=>pintarRespuestas([]));
 }
 
 // nav activa
@@ -2749,7 +2859,7 @@ document.querySelectorAll("main section[id]").forEach(s=>ob.observe(s));
     sobre:{t:"Sobre mí",s:["sobre"]},
     contenido:{t:"Contenido",s:["videos"]},
     marcas:{t:"Marcas",s:["cap-marcas","numeros","experiencia","porque","contacto"]},
-    comunidad:{t:"Comunidad",s:["cap-comu","comunidad","cartelera","recomendaciones","setups","dia","pc","jugar"]},
+    comunidad:{t:"Comunidad",s:["cap-comu","comunidad","cartelera","tweets","recomendaciones","setups","dia","pc","jugar"]},
     legal:{t:"Privacidad y reglas",s:["legal"]}};
   const main=document.querySelector("main"), portada=document.getElementById("inicio");
   const bloques=[...document.querySelectorAll("main > section.bloque, main > .capitulo")];
@@ -2767,7 +2877,7 @@ document.querySelectorAll("main section[id]").forEach(s=>ob.observe(s));
     if(p)bar.querySelector("span").textContent=PAG[p].t;
     document.querySelectorAll(".indice a,.tabbar a").forEach(a=>a.classList.toggle("activa",a.dataset.sec===(p?NAVDE[p]:"inicio")));
     requestAnimationFrame(()=>{const el=p&&document.getElementById(id);
-      if(!p||!el||id===PAG[p].s[0])scrollTo(0,0);else el.scrollIntoView({block:"start"})});
+      if(el&&el.tagName==="DETAILS")el.open=true;if(!p||!el||id===PAG[p].s[0])scrollTo(0,0);else el.scrollIntoView({block:"start"})});
   }
   window.ruta=ruta;
   addEventListener("hashchange",ruta);addEventListener("popstate",ruta);
@@ -2820,6 +2930,49 @@ document.querySelectorAll("main section[id]").forEach(s=>ob.observe(s));
     mini.classList.add("on");
   }
   pintar();setInterval(pintar,4000);
+})();
+</script>
+<script>
+(function(){
+  const caja=document.querySelector("#tweets .x-caja");if(!caja)return;
+  let cargado=false;
+  function cargar(){
+    if(cargado)return;cargado=true;
+    const osc=document.documentElement.dataset.theme==="dark"||(!document.documentElement.dataset.theme&&matchMedia("(prefers-color-scheme: dark)").matches);
+    const a=caja.querySelector(".twitter-timeline");if(a&&osc)a.setAttribute("data-theme","dark");
+    const s=document.createElement("script");s.src="https://platform.twitter.com/widgets.js";s.async=true;s.charset="utf-8";document.body.appendChild(s);
+    setTimeout(()=>{if(!caja.querySelector("iframe")){const r=caja.querySelector(".x-respaldo");if(r)r.hidden=false;const l=caja.querySelector(".twitter-timeline");if(l)l.style.display="none";}},8000);
+  }
+  const ob=new IntersectionObserver(e=>{if(e.some(x=>x.isIntersecting)){cargar();ob.disconnect()}},{rootMargin:"300px"});ob.observe(caja);
+})();
+</script>
+<script>
+// ===== Kirbitos conectados a Twitch + StreamElements =====
+(function(){
+  const bar=document.getElementById("tw-bar"),txt=document.getElementById("tw-txt"),btn=document.getElementById("tw-btn");if(!bar)return;
+  const e=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  let yo=null;
+  const toast=m=>{const t=document.getElementById("toast");if(!t)return;t.textContent=m;t.classList.add("ver");setTimeout(()=>{t.classList.remove("ver");t.textContent="Mail copiado"},3200)};
+  function pintar(){
+    if(!yo){bar.classList.remove("on");return}
+    bar.classList.add("on");
+    const quedan=Math.max(0,yo.topes.juego-yo.hoy.juego);
+    txt.innerHTML=`<b>Conectada/o como ${e(yo.nombre)}</b><span>Tus kirbitos se suman solos al canal. Hoy te quedan ${quedan} del juego${yo.hoy.trivia?" y la trivia ya sumó":" y la trivia de hoy"}. Mirá tu saldo con !points.</span>`;
+    btn.textContent="Salir";btn.href="/api/logout";
+    const inp=document.getElementById("twitch-user");if(inp){inp.value=yo.usuario;inp.dispatchEvent(new Event("input"))}
+    const canje=document.querySelector(".canje");if(canje)canje.hidden=true;
+  }
+  fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=>{if(d&&d.conectado){yo=d;pintar()}}).catch(()=>{});
+  if(/login=error/.test(location.hash))setTimeout(()=>toast("No se pudo conectar con Twitch. Probá de nuevo."),800);
+  window.kirbitosSync=async(fuente,cantidad)=>{
+    if(!yo||!(cantidad>0))return;
+    try{const r=await fetch("/api/kirbitos",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({fuente,cantidad})});
+      const d=await r.json();
+      if(d.otorgado>0){toast(`+${d.otorgado} kirbitos sumados a tu cuenta de Twitch 💜`);if(fuente==="juego")yo.hoy.juego+=d.otorgado;else yo.hoy.trivia=true;pintar()}
+      else if(d.motivo)toast(d.motivo);
+      else if(d.error)toast(d.error);
+    }catch(_){toast("No se pudieron sumar ahora. Probá en un rato.")}
+  };
 })();
 </script>
 </body>

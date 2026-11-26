@@ -1,0 +1,11 @@
+PÁGINA DE GODCITA · cómo subirla
+
+1. En GitHub, entrá al repositorio pagina-godcita.
+2. "Add file" → "Upload files".
+3. Arrastrá TODO lo que hay adentro de esta carpeta (no la carpeta en sí):
+   index.html, las imágenes, el video, la carpeta "api" y la carpeta ".github".
+4. Abajo tocá "Commit changes".
+5. Vercel la publica solo en 1 o 2 minutos.
+
+No borres el archivo stats.json que ya está en GitHub: lo escribe el robot de métricas.
+Si en Windows no ves la carpeta ".github", no pasa nada: ya está subida de antes.
