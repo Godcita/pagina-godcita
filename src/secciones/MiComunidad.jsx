@@ -136,6 +136,18 @@ export default function MiComunidad() {
           </div>
         </div>
         <div className="separa"></div>
+        <h3 className="sub-h" id="eoa">¿Esto o aquello?</h3>
+        <p className="sub-p">Votá y mirá qué eligió Bianca y qué eligió la comunidad. Al final, descubrí qué tan compatibles somos como amigos.</p>
+        <div className="votos" id="votos"></div>
+        <div className="panel compat" id="compat" aria-live="polite">
+          <div className="medidor" id="medidor">
+            <b id="compat-n">?</b>
+          </div>
+          <div>
+            <h3 id="compat-t">¿Qué tan amigos seríamos?</h3>
+            <p className="muted" id="compat-x">Votá al menos 5 preguntas y te digo nuestro porcentaje de amistad.</p>
+          </div>
+        </div>
       </div>
     </section>
   );

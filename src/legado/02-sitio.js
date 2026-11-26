@@ -140,6 +140,30 @@ $("#form-charla").onsubmit=async e=>{
 };
 
 // esto o aquello + compatibilidad
+let misVotos=lee("eoa-votos",{});
+function pintarVotos(){
+  const conteo=(REMOTO&&REMOTO.votos)||{};
+  $("#votos").innerHTML=C.estoOAquello.map((q,i)=>{
+    const mio=misVotos[i], c=conteo[i]||[0,0];
+    const tot=c[0]+c[1]+(mio!=null&&!REMOTO?1:0);
+    const cnt=[c[0]+(mio===0&&!REMOTO?1:0), c[1]+(mio===1&&!REMOTO?1:0)];
+    const opt=(k,txt)=>{const p=tot?Math.round(cnt[k]/tot*100):0;
+      return `<button data-q="${i}" data-o="${k}" aria-pressed="${mio===k}"><i class="fill" style="width:${mio!=null?p:0}%"></i><span>${esc(txt)}</span>${mio!=null?`<span class="pct">${p}% de la comunidad</span>`:""}${mio!=null&&q.bianca===k?`<span class="bianca">Bianca</span>`:""}</button>`};
+    return `<div class="panel voto"><div class="q">${esc(q.p)}</div><div class="opciones">${opt(0,q.a)}${opt(1,q.b)}</div></div>`}).join("");
+  // compatibilidad
+  const comunes=C.estoOAquello.map((q,i)=>[q.bianca,misVotos[i]]).filter(([b,m])=>b!=null&&m!=null);
+  if(comunes.length<5){$("#compat-n").textContent="?";$("#medidor").style.setProperty("--p",0);$("#compat-t").textContent="¿Qué tan amigos seríamos?";
+    $("#compat-x").textContent=`Votá ${Math.max(0,5-comunes.length)} preguntas más (de las que Bianca ya votó) y te digo nuestro porcentaje de amistad.`;return}
+  const p=Math.round(comunes.filter(([b,m])=>b===m).length/comunes.length*100);
+  $("#compat-n").textContent=p+"%"; $("#medidor").style.background=`conic-gradient(var(--rosa) ${p}%, var(--superficie) 0)`;
+  const [t,x]=p>=80?["Amigos de toda la vida","Somos casi la misma persona. Te espero en el stream con el mate listo."]:p>=60?["Muy buena química","Tenemos mucho en común y lo que no, lo discutimos en el chat."]:p>=40?["Amigos con debate","Coincidimos en algunas, en otras no. Ideal para charlas largas."]:["Polos opuestos","No coincidimos casi en nada… y justamente por eso nos llevaríamos bien."];
+  $("#compat-t").textContent=t; $("#compat-x").textContent=`Coincidimos en ${comunes.filter(([b,m])=>b===m).length} de ${comunes.length} preguntas. ${x}`;
+}
+$("#votos").onclick=e=>{const b=e.target.closest("button[data-q]");if(!b)return;const q=+b.dataset.q,o=+b.dataset.o;
+  const nuevo=misVotos[q]==null; misVotos[q]=o; guarda("eoa-votos",misVotos);
+  if(C.backendURL&&nuevo)enviar({tipo:"voto",id:q,opcion:o}).catch(()=>{});
+  pintarVotos();};
+pintarVotos();
 
 // servicios y contacto
 $("#servs").innerHTML=C.servicios.map(([t,d])=>`<div class="panel"><h3>${esc(t)}</h3><p class="muted" style="font-size:15.5px">${esc(d)}</p></div>`).join("");
@@ -896,7 +920,7 @@ function aplicarStats(st){
 
 // datos remotos (respuestas aprobadas, votos de la comunidad, ranking)
 if(C.backendURL){
-  fetch(C.backendURL).then(r=>r.json()).then(d=>{REMOTO=d;try{aplicarStats(d.stats)}catch(e){}if(window.pintarReco)pintarReco();if(window.pintarEnvios)pintarEnvios(d.envios||[]);const rs=d.respuestas||[];pintarRespuestas(rs.filter(r=>!/^Opinión:/.test(r.pregunta)));pintarCartelera(rs.filter(r=>/^Opinión:/.test(r.pregunta)).map(r=>({tipo:r.pregunta.replace("Opinión: ",""),texto:r.respuesta,autor:r.nombre||"Anónimo",color:"turquesa"})));pintarRanking()}).catch(()=>pintarRespuestas([]));
+  fetch(C.backendURL).then(r=>r.json()).then(d=>{REMOTO=d;try{aplicarStats(d.stats)}catch(e){}if(window.pintarReco)pintarReco();if(window.pintarEnvios)pintarEnvios(d.envios||[]);const rs=d.respuestas||[];pintarRespuestas(rs.filter(r=>!/^Opinión:/.test(r.pregunta)));pintarCartelera(rs.filter(r=>/^Opinión:/.test(r.pregunta)).map(r=>({tipo:r.pregunta.replace("Opinión: ",""),texto:r.respuesta,autor:r.nombre||"Anónimo",color:"turquesa"})));pintarVotos();pintarRanking()}).catch(()=>pintarRespuestas([]));
 }
 
 // nav activa

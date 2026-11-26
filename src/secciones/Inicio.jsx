@@ -313,10 +313,15 @@ export default function Inicio() {
                 </span>
               </a>
               {" "}
-              <a className="tile t-comu c-6 r-2" href="#comunidad" data-ancla="conozcamonos">
+              <a className="tile t-comu c-3 r-2" href="#comunidad" data-ancla="conozcamonos">
                 <span className="t-flecha" aria-hidden="true">↗</span>
                 <span className="t-etq">Pregunta del día</span>
                 <span className="t-tit" id="t-pregunta"></span>
+              </a>
+              <a className="tile t-comu punteado c-3 r-2" href="#comunidad" data-ancla="eoa">
+                <span className="t-flecha" aria-hidden="true">↗</span>
+                <span className="t-etq">¿Esto o aquello?</span>
+                <span className="t-tit">¿Qué tan amigos seríamos?</span>
               </a>
               {" "}
               <a className="tile t-quiz c-3 r-2" href="#quiz">

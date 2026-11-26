@@ -166,6 +166,26 @@ const CONFIG = {
     "¿De qué estás orgulloso aunque nadie te lo haya dicho?",
     "Si mañana no tuvieras que trabajar ni estudiar, ¿qué harías todo el día?"
   ],
+  // ¿Esto o aquello? bianca: 0 = primera opción, 1 = segunda, null = todavía no votó.
+  // Ojo: las elecciones de Bianca cargadas abajo son DE PRUEBA: reemplazalas por las tuyas.
+  estoOAquello: [
+    { p:"Para arrancar el día", a:"Mate", b:"Café", bianca:0 },
+    { p:"Jugar en", a:"PC", b:"Consola", bianca:0 },
+    { p:"Shooter favorito", a:"Valorant", b:"CS", bianca:0 },
+    { p:"Deporte", a:"Pádel", b:"Fútbol", bianca:0 },
+    { p:"Horario", a:"Noche", b:"Mañana", bianca:0 },
+    { p:"Postre", a:"Torta", b:"Helado", bianca:0 },
+    { p:"Vacaciones", a:"Playa", b:"Montaña", bianca:null },
+    { p:"Plan de sábado", a:"Salir", b:"Quedarse en casa", bianca:null },
+    { p:"Mascota", a:"Perro", b:"Gato", bianca:null },
+    { p:"Música para jugar", a:"Con música", b:"Sin música", bianca:null },
+    { p:"Comida", a:"Pizza", b:"Hamburguesa", bianca:null },
+    { p:"En una partida", a:"Ganar", b:"Divertirse", bianca:null },
+    { p:"Películas", a:"Terror", b:"Comedia", bianca:null },
+    { p:"Mensajes", a:"Audio", b:"Texto", bianca:null },
+    { p:"Estación", a:"Verano", b:"Invierno", bianca:null },
+    { p:"Desayuno", a:"Dulce", b:"Salado", bianca:null }
+  ],
   // Ejemplo: { texto:"Un comentario lindo", autor:"usuario", red:"Twitch" }
   comentarios: [],
 
