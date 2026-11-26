@@ -1,0 +1,6 @@
+{
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/:seccion([a-z0-9-]+)", "destination": "/index.html" }
+  ]
+}

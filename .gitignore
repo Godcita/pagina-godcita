@@ -1,0 +1,7 @@
+# herramientas locales
+.claude/
+node_modules/
+dist/
+.vercel/
+.DS_Store
+Thumbs.db
