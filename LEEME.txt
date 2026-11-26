@@ -1,11 +1,31 @@
-PÁGINA DE GODCITA · cómo subirla
+PÁGINA DE GODCITA · cómo está armada y cómo subir cambios
 
-1. En GitHub, entrá al repositorio pagina-godcita.
-2. "Add file" → "Upload files".
-3. Arrastrá TODO lo que hay adentro de esta carpeta (no la carpeta en sí):
-   index.html, las imágenes, el video, la carpeta "api" y la carpeta ".github".
-4. Abajo tocá "Commit changes".
-5. Vercel la publica solo en 1 o 2 minutos.
+La página ahora está hecha en React (con Vite). Se ve y funciona igual que antes.
+Vercel la compila sola cada vez que hay un cambio en GitHub (1 o 2 minutos).
 
-No borres el archivo stats.json que ya está en GitHub: lo escribe el robot de métricas.
-Si en Windows no ves la carpeta ".github", no pasa nada: ya está subida de antes.
+DÓNDE ESTÁ CADA COSA
+- src/config.js ............ TODO lo que se edita: redes, videos, juegos, marcas, novedades, PC, trivia, etc.
+- public/ .................. fotos, logos, portadas y el video (las imágenes nuevas van acá).
+- src/secciones/ ........... cada parte de la página (Inicio, Sobre mí, Contenido, Números, Jugar…).
+- src/componentes/ ......... barra de arriba, pie y avisos.
+- src/estilos/sitio.css .... colores, tipografía y diseño (la paleta está al final, en "v22: CLUB DIGITAL").
+- src/legado/ .............. la lógica de siempre (juego, trivia, buscador, Spotify, Twitch, direcciones).
+- api/ ..................... login con Twitch y kirbitos (Vercel).
+- stats.json ............... lo escribe el robot de métricas. No lo borres.
+
+SUBIR UN CAMBIO DESDE GITHUB (sin instalar nada)
+1. Entrá al repositorio pagina-godcita.
+2. Para cambiar textos o datos: abrí src/config.js, tocá el lápiz, editá y "Commit changes".
+3. Para sumar una imagen: entrá a la carpeta public/, "Add file" → "Upload files", arrastrala y "Commit changes".
+4. Vercel la publica sola.
+
+PROBARLA EN LA COMPU
+1. Instalá Node.js (una sola vez).
+2. En la carpeta: npm install (una sola vez).
+3. npm run dev → abre la página en http://localhost:5173 y se actualiza sola al guardar.
+4. npm run build → arma la versión final en dist/ (es lo mismo que hace Vercel).
+
+DIRECCIONES
+Cada sección tiene su dirección: /sobre-mi, /contenido, /marcas, /numeros, /experiencia, /por-que-yo,
+/contacto, /comunidad, /mi-comunidad, /jugar, /recomendaciones, /novedades, /setups, /mi-dia, /mi-pc, /en-x, /privacidad.
+vercel.json hace que todas abran la página.
